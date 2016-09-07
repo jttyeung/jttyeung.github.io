@@ -1,6 +1,6 @@
 ---
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
-
 @charset "utf-8";
 
 // Our variables
@@ -35,8 +35,5 @@ $on-laptop:        800px;
 //     }
 // }
 
-
 // Import partials from the `minima` theme.
 @import "minima";
-
-@import "bootstrap";
