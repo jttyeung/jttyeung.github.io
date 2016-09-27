@@ -5,8 +5,8 @@
  */
 
 // Core variables and mixins
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "bootstrap/_variables";
+@import "bootstrap/_mixins";
 
 // Reset and dependencies
 @import "bootstrap/normalize";
@@ -14,7 +14,7 @@
 @import "bootstrap/glyphicons";
 
 // Core CSS
-@import "bootstrap/scaffolding";
+@import "bootstrap/_scaffolding";
 @import "bootstrap/type";
 @import "bootstrap/code";
 @import "bootstrap/grid";

@@ -1,0 +1,10 @@
+---
+---
+
+@import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans';
+$font-family-sans-serif: "Open Sans", sans-serif;
+$headings-font-family: "Lato", sans-serif;
+
+
+/* any style customization must be before the bootstrap import */
+@import "bootstrap";

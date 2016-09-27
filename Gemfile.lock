@@ -38,6 +38,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 3.2.1)
+  sass
 
 RUBY VERSION
    ruby 2.3.0p0
