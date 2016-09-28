@@ -18,20 +18,11 @@
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
+      <div class="col-md-12 text-center">
+          <!-- include social media links -->
+          {% if site.github_username %} {% include icon-github.html username=site.github_username %} {% endif %}
+          {% if site.linkedin_username %} {% include icon-linkedin.html username=site.linkedin_username %} {% endif %}
 
-          {% if site.linkedin_username %}
-          <li>
-            {% include icon-linkedin.html username=site.linkedin_username %}
-          </li>
-          {% endif %}
-        </ul>
       </div>
 
       <div class="footer-col footer-col-3">
