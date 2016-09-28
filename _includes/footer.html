@@ -1,32 +1,14 @@
-<footer class="site-footer">
+<footer class="site-footer white-text">
 
-  <div class="wrapper">
+  <div class="container-fluid">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-12 text-center">
+    <div class="col-md-12 text-center">
+          <div class="inverted">
           <!-- include social media links -->
           {% if site.github_username %} {% include icon-github.html username=site.github_username %} {% endif %}
           {% if site.linkedin_username %} {% include icon-linkedin.html username=site.linkedin_username %} {% endif %}
-
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
+          </div>
+         <div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
       </div>
     </div>
 
