@@ -27,3 +27,16 @@
 .inverted {
   filter: invert(100%);
 }
+
+img {
+  opacity: .9;
+  border: 1px solid #4E5A52;
+}
+
+.vspace {
+  margin-top: 35px;
+}
+
+.vtop {
+  vertical-align: text-top;
+}

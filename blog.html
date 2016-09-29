@@ -1,14 +1,11 @@
 ---
 layout: default
+permalink: /blog/
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<div class="home">
+<div class="container">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
 
   <h1 class="page-heading">Posts</h1>
 
@@ -24,8 +21,8 @@ layout: default
     {% endfor %}
   </ul>
 
+  </div><!-- col-md-10 -->
+
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
-
-</html>
