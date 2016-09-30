@@ -8,4 +8,5 @@ $link-color: #C4A39C;
 $text-color: #4E5A52;
 
 /* any style customization must be before the bootstrap import */
+@import "hamburgers";
 @import "bootstrap";
