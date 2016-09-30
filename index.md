@@ -8,5 +8,5 @@ title: Hello, I'm Joanne.
 [autodidact]: https://en.wikipedia.org/wiki/Autodidacticism
 [code]: /code
 [travel]: /travel
-[cook]: /cook
+[cook]: https://www.instagram.com/thefatso_ul/
 [obsess]: /blog

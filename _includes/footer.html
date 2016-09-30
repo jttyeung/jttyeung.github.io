@@ -3,12 +3,17 @@
   <div class="container-fluid">
 
     <div class="text-center">
-          <div class="inverted">
-          <!-- include social media links -->
-          {% if site.github_username %} {% include icon-github.html username=site.github_username %} {% endif %}
-          {% if site.linkedin_username %} {% include icon-linkedin.html username=site.linkedin_username %} {% endif %}
-          </div>
-         <div><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+          <div class="inverted col-md-12">
+            <!-- include social media links -->
+            <div class="col-md-4"></div>
+            <div class="col-md-1">
+            {% if site.github_username %} {% include icon-github.html username=site.github_username %} {% endif %}</div>
+            <div class="col-md-1">
+            {% if site.linkedin_username %} {% include icon-linkedin.html username=site.linkedin_username %} {% endif %}</div>
+            <div class="col-md-1">
+            {% if site.instagram_username %} {% include icon-instagram.html username=site.instagram_username %} {% endif %}</div>
+          </div><!-- col-md-12 -->
+         <div class="col-md-12"><a href="mailto:{{ site.email }}">{{ site.email }}</a></div><!-- col-md-12 -->
       </div>
     </div>
 
