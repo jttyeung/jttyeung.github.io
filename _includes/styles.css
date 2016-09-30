@@ -7,6 +7,19 @@ img {
   border: 1px solid #4E5A52;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.pad-top {
+  padding-top: 25px;
+}
+
+.vspace {
+  margin-top: 20px;
+
+}
+
 .site-footer {
   background-color: #4E5A52;
   position: fixed;
@@ -37,11 +50,18 @@ img {
   filter: invert(100%);
 }
 
-.vspace {
-  margin-top: 35px;
-}
-
 .icon-padding {
   margin-left: 1px;
   margin-right: 1px;
+}
+
+.nav-label-lg {
+  vertical-align: top;
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.menu-float {
+  float: right;
+  top: 0px;
 }
