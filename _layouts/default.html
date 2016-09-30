@@ -13,6 +13,18 @@
         </main>
         {% include footer.html %}
 
+<script>
+  var $hamburger = $(".hamburger");
+  $hamburger.click(function(e) {
+    $hamburger.toggleClass("is-active");
+
+    // $hamburger.click(function(f) {
+    //   $hamburger.hide(".navigation");
+  });
+
+  $(document).ready($hamburger);
+</script>
+
   </body>
 
 </html>
