@@ -1,6 +1,7 @@
 <header class="site-header" role="banner">
 
-  <div class="container-fluid nav-menu">
+  <div class="container-fluid">
+  <div class="nav-menu">
 
     {% assign custom_url = site.url | append: site.baseurl %}
     {% assign full_base_url = site.github.url | default: custom_url %}
@@ -24,10 +25,7 @@
   </nav>
   </button>
 
-    </div>
-
-
-
-  </div>
+  </div><!-- nav-menu -->
+  </div><!-- container-fluid -->
 
 </header>
