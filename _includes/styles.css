@@ -1,3 +1,12 @@
+body {
+    padding-bottom: 60px;
+}
+
+img {
+  opacity: .9;
+  border: 1px solid #4E5A52;
+}
+
 .site-footer {
   background-color: #4E5A52;
   position: fixed;
@@ -28,15 +37,13 @@
   filter: invert(100%);
 }
 
-img {
-  opacity: .9;
-  border: 1px solid #4E5A52;
-}
+
 
 .vspace {
   margin-top: 35px;
 }
 
-body {
-    padding-bottom: 60px;
+.icon-padding {
+  margin-left: 1px;
+  margin-right: 1px;
 }
