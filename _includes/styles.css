@@ -2,13 +2,19 @@ body {
     padding-bottom: 60px;
 }
 
+header {
+  display: block;
+}
+
 img {
   opacity: .9;
   border: 1px solid #4E5A52;
 }
 
-ul {
+nav ul {
   list-style-type: none;
+  position: absolute;
+  z-index: 100;
 }
 
 /* top of the page padding */
@@ -19,13 +25,14 @@ ul {
 /* vertical space */
 .vspace {
   margin-top: 20px;
-
 }
 
-.navigation {
+.nav-list {
   font-size: 19px;
+  background-color: #4E5A52;
   text-align: left;
 }
+
 
 /* floats nav menu */
 .menu-float {

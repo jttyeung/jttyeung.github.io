@@ -14,15 +14,19 @@
         {% include footer.html %}
 
 <script>
-  var $hamburger = $(".hamburger");
-  $hamburger.click(function(e) {
+var $hamburger = $(".hamburger");
+  $hamburger.on('click', function(e) {
     $hamburger.toggleClass("is-active");
-
-    // $hamburger.click(function(f) {
-    //   $hamburger.hide(".navigation");
+    $('nav').toggle();
   });
 
-  $(document).ready($hamburger);
+$(document).on('click', function(event) {
+  if (!$(event.target).closest('.wrapper').length) {
+        $hamburger.removeClass("is-active");
+        $('nav').hide();
+  }
+});
+
 </script>
 
   </body>

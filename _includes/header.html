@@ -6,23 +6,23 @@
     {% assign full_base_url = site.github.url | default: custom_url %}
 <!--     <a class="site-title" href="{{ full_base_url }}/">{{ site.title | escape }}</a> -->
 
-<button class="hamburger hamburger--vortex-r menu-float" type="button" aria-label="Menu" aria-controls="navigation">
-<!--   <span class="hamburger-label nav-label-lg">Menu</span> -->
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-<nav class="navigation">
-  <ul>
-    {% for my_page in site.pages %}
-      {% if my_page.title %}
-      <li>
-        <a class="page-link" href="{{ my_page.url | prepend: full_base_url }}">{{ my_page.title | escape }}</a>
-      </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</nav>
-</button>
+  <button class="hamburger hamburger--vortex-r menu-float" type="button" aria-label="Menu" aria-controls="navigation">
+  <!--   <span class="hamburger-label nav-label-lg">Menu</span> -->
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  <nav class="nav-list">
+    <ul>
+      {% for my_page in site.pages %}
+        {% if my_page.title %}
+        <li>
+          <a class="page-link" href="{{ my_page.url | prepend: full_base_url }}">{{ my_page.title | escape }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+  </button>
 
     </div>
 
