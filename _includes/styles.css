@@ -11,13 +11,21 @@ img {
   border: 1px solid #4E5A52;
 }
 
+/* top of the page padding */
+.pad-top {
+  padding-top: 125px;
+}
+
+
+/*  ------------NAVIGATION MENU---------- */
+
 .nav-menu {
   z-index: 100;
   display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
-  background: #4E5A52;
+  background-color: rgba(78, 90, 82, 0.9);
 }
 
 .nav-list {
@@ -36,25 +44,29 @@ nav li {
   padding: 5px;
 }
 
+/* force white links */
+li a:link {
+  color: rgb(255,255,255);
+}
+
 .hamburger-float {
   position: absolute;
-  background-color: #4E5A52;
+  background-color: rgba(78, 90, 82, 0.9);
   top: 0px;
   right: 0px;
 }
 
-/* top of the page padding */
-.pad-top {
-  padding-top: 125px;
+a:hover {
+  text-decoration: none;
+  background-color: rgb(161, 137, 132);
+  color: rgb(255,255,255);
 }
 
-/* vertical space */
-.vspace {
-  margin-top: 20px;
-}
+
+/*  ----------FOOTER---------- */
 
 .site-footer {
-  background-color: #4E5A52;
+  background-color: rgba(78, 90, 82, 0.9);
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -63,22 +75,6 @@ nav li {
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
-  font-size: 12px;
-}
-
-/* footer light green text */
-.light-text a:link {
-  color: #D5E3DA;
-}
-
-/* force white links */
-.white-text a:link {
-  color: #FFFFFF;
-}
-
-.white-text a:hover {
-  color: #FFFFFF;
-  text-decoration: none;
 }
 
 /* inverts svg icon colors */
@@ -88,6 +84,6 @@ nav li {
 
 /* pads svg icons */
 .icon-padding {
-  margin-left: 1px;
-  margin-right: 1px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
