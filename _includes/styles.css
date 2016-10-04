@@ -16,8 +16,18 @@ img {
   padding-top: 125px;
 }
 
+a:hover {
+  text-decoration: none;
+  background-color: rgb(161, 137, 132);
+  color: rgb(255,255,255);
+}
+
 
 /*  ------------NAVIGATION MENU---------- */
+
+.hide {
+  display: none;
+}
 
 .nav-menu {
   z-index: 100;
@@ -42,10 +52,15 @@ nav ul {
 
 nav li {
   padding: 5px;
+  width: 100%;
+}
+
+li .active {
+
 }
 
 /* force white links */
-li a:link {
+nav ul li a:link {
   color: rgb(255,255,255);
 }
 
@@ -54,12 +69,6 @@ li a:link {
   background-color: rgba(78, 90, 82, 0.9);
   top: 0px;
   right: 0px;
-}
-
-a:hover {
-  text-decoration: none;
-  background-color: rgb(161, 137, 132);
-  color: rgb(255,255,255);
 }
 
 

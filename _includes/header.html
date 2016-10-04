@@ -15,12 +15,13 @@
     </button>
   </div><!-- row -->
   <div class="row">
-    <nav class="nav-list">
+    <nav class="nav-list hide">
+    {% assign pages = site.pages | sort: "weight" %}
       <ul>
         {% for my_page in site.pages %}
           {% if my_page.title %}
           <li>
-            <a class="page-link" href="{{ my_page.url | prepend: full_base_url }}">{{ my_page.title | escape }}</a>
+            <a {% if my_page.url == my_page.url %} class="active" {% endif %} href="{{ my_page.url | prepend: full_base_url }}">{{ my_page.title | escape }}</a>
           </li>
           {% endif %}
         {% endfor %}

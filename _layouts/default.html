@@ -15,12 +15,11 @@
 
 <script>
 
-$('nav').hide();
-
 var $hamburger = $('.hamburger');
     $('nav').hide();
   $hamburger.on('click', function(e) {
     $hamburger.toggleClass('is-active');
+    $('nav').removeClass('hide');
     $('nav').toggle();
   });
 
