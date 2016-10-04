@@ -15,18 +15,22 @@
 
 <script>
 
+$('nav').hide();
+$('.hamburger').addClass('hamburger-opaque')
+
 var $hamburger = $('.hamburger');
-    $('nav').hide();
-  $hamburger.on('click', function(e) {
+
+$hamburger.on('click', function(e) {
     $hamburger.toggleClass('is-active');
     $('nav').removeClass('hide');
-    $('nav').toggle();
-  });
+    $('.hamburger').addClass('hamburger-transparent')
+    $('nav').slideToggle(150);
+});
 
 $(document).on('click', function(event) {
   if (!$(event.target).closest('.nav-menu').length) {
-        $hamburger.removeClass('is-active');
-        $('nav').hide();
+      $hamburger.removeClass('is-active');
+      $('nav').slideUp(150);
   }
 });
 

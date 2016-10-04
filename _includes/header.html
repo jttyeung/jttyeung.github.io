@@ -7,7 +7,7 @@
     {% assign full_base_url = site.github.url | default: custom_url %}
 <!--     <a class="site-title" href="{{ full_base_url }}/">{{ site.title | escape }}</a> -->
   <div class="row">
-    <button class="hamburger hamburger--vortex-r hamburger-float" type="button" aria-label="Menu" aria-controls="navigation">
+    <button class="hamburger hamburger--vortex-r hamburger-position" type="button" aria-label="Menu" aria-controls="navigation">
     <!--   <span class="hamburger-label nav-label-lg">Menu</span> -->
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
@@ -15,7 +15,7 @@
     </button>
   </div><!-- row -->
   <div class="row">
-    <nav class="nav-list hide">
+    <nav class="nav-list hide col-md-12">
     {% assign pages = site.pages | sort: "weight" %}
       <ul>
         {% for my_page in site.pages %}

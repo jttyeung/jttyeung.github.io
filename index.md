@@ -8,6 +8,6 @@ header: Hello, I'm Joanne.
 
 [autodidact]: https://en.wikipedia.org/wiki/Autodidacticism
 [code]: /projects
-[travel]: /travel
+[travel]: /photography
 [cook]: https://www.instagram.com/thefatso_ul/
 [obsess]: /blog

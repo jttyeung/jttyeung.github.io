@@ -18,8 +18,8 @@ img {
 
 a:hover {
   text-decoration: none;
-  background-color: rgb(161, 137, 132);
-  color: rgb(255,255,255);
+  background-color: rgba(161, 137, 132, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 
@@ -36,6 +36,7 @@ a:hover {
   top: 0;
   right: 0;
   background-color: rgba(78, 90, 82, 0.9);
+/*  border-radius: 0 10px;*/
 }
 
 .nav-list {
@@ -55,20 +56,32 @@ nav li {
   width: 100%;
 }
 
-li .active {
-
+ul li a:link {
+  color: rgba(213, 226, 218, 1) !important;
 }
 
-/* force white links */
-nav ul li a:link {
-  color: rgb(255,255,255);
+ul li:hover {
+  background-color: rgba(213, 226, 218, 1);
 }
 
-.hamburger-float {
+ul li a:hover {
+  background-color: rgba(213, 226, 218, 1);
+  color: rgba(78, 90, 82, 1);
+}
+
+.hamburger-position {
   position: absolute;
-  background-color: rgba(78, 90, 82, 0.9);
+  z-index: 101;
   top: 0px;
   right: 0px;
+}
+
+.hamburger-opaque {
+  background-color: rgba(78, 90, 82, 0.9);
+}
+
+.hamburger-transparent {
+  background-color: rgba(78, 90, 82, 0);
 }
 
 
