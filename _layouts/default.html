@@ -16,21 +16,24 @@
 <script>
 
 $('nav').hide();
-$('.hamburger').addClass('hamburger-opaque')
+$('button').addClass('hamburger-opaque');
 
 var $hamburger = $('.hamburger');
 
 $hamburger.on('click', function(e) {
     $hamburger.toggleClass('is-active');
     $('nav').removeClass('hide');
-    $('.hamburger').addClass('hamburger-transparent')
     $('nav').slideToggle(150);
+    $('button').toggleClass('hamburger-opaque');
+    $('button').toggleClass('hamburger-transparent');
 });
 
 $(document).on('click', function(event) {
   if (!$(event.target).closest('.nav-menu').length) {
       $hamburger.removeClass('is-active');
       $('nav').slideUp(150);
+      $('button').removeClass('hamburger-transparent');
+      $('button').addClass('hamburger-opaque');
   }
 });
 
