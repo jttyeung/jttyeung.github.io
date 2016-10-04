@@ -10,8 +10,9 @@ $text-color: #4E5A52;
 $hamburger-padding-x: 18px;
 $hamburger-padding-y: 18px;
 $hamburger-layer-height: 5px;
-$hamburger-layer-color: #4E5A52;
+$hamburger-layer-color: #fff;
 $hamburger-layer-spacing: 5px;
+$hamburger-hover-transition-duration: 0.3s;
 
 /* any style customization must be before the bootstrap import */
 @import "hamburgers";
