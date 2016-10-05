@@ -20,9 +20,10 @@ img {
   padding-bottom: 15px;
 }
 
-/* top of the page padding */
-.pad-top {
-  padding-top: 125px;
+/* vertical page padding */
+.page-padding {
+  padding-top: 110px;
+  padding-bottom: 70px;
 }
 
 a:hover {
