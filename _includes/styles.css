@@ -11,6 +11,15 @@ img {
   border: 1px solid #4E5A52;
 }
 
+.icon {
+  padding-top: 15px;
+}
+
+.v-padding {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 /* top of the page padding */
 .pad-top {
   padding-top: 125px;
@@ -46,8 +55,8 @@ h3 span {
 .nav-list {
   font-size: 20px;
   text-transform: uppercase;
-  padding-top: 65px;
-  height: 210px;
+  padding-top: 55px;
+  height: 175px;
   width: 200px;
 }
 
@@ -58,6 +67,8 @@ nav ul {
 
 nav li {
   padding: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 15px;
   width: 100%;
 }
