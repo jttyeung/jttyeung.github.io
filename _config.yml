@@ -20,6 +20,9 @@ description: > # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
+
+timezone: America/Los_Angeles
+
 github_username:  jttyeung
 linkedin_username: jttyeung
 instagram_username: thefatso_ul

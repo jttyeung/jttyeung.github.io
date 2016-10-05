@@ -22,6 +22,10 @@ a:hover {
   color: rgba(255, 255, 255, 1);
 }
 
+h3 span {
+  font-size: 14px;
+}
+
 
 /*  ------------NAVIGATION MENU---------- */
 
