@@ -32,7 +32,7 @@ a:hover {
 .nav-menu {
   z-index: 100;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background-color: rgba(78, 90, 82, 0.9);
@@ -49,24 +49,25 @@ a:hover {
 
 nav ul {
   list-style-type: none;
+  padding-left: 0px;
 }
 
 nav li {
   padding: 5px;
+  padding-left: 15px;
   width: 100%;
 }
 
-ul li a:link {
-  color: rgba(213, 226, 218, 1) !important;
-}
-
-ul li:hover {
-  background-color: rgba(213, 226, 218, 1);
-}
-
-ul li a:hover {
-  background-color: rgba(213, 226, 218, 1);
+ul a#menu:hover {
   color: rgba(78, 90, 82, 1);
+}
+
+ul a#menu li:hover {
+  background-color: rgba(213, 226, 218, 1);
+}
+
+ul a#menu {
+  color: rgba(213, 226, 218, 1);
 }
 
 .hamburger-position {
