@@ -4,7 +4,15 @@ layout: default
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 <div class="container">
+
   <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <a href="/blog">&#8249; Back to Posts</a>
+      </div><!-- col-md-10 -->
+  </div><!-- row -->
+
+  <div class="row v-padding">
     <div class="col-md-1"></div>
       <header class="post-header col-md-10">
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -18,6 +26,14 @@ layout: default
         {{ content }}
       </div><!-- col-md-10 -->
   </div><!-- row -->
+
+  <div class="row v-padding">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 v-padding">
+        <a href="/blog">&#8249; Back to Posts</a>
+      </div><!-- col-md-10 -->
+  </div><!-- row -->
+
 </div><!-- container -->
 
   {% if site.disqus.shortname %}
