@@ -43,9 +43,11 @@ I finally decided to go with plain ol' [jekyll][jekyll] and integrate Bootstrap 
 #### 2. Download [Bootstrap] - the Sass version. Go to the folder `assests\stylesheets`.
 #### 3. Place `_bootstrap.scss` and the `bootstrap` folder and all its contents into a new folder named `_sass` in the root of the Jekyll project.
 #### 4. In the `Gemfile` of the Jekyll project, add the following line
+
 ```
 gem "sass"
 ````
+
 #### 5. Go to the `_config.yml` file and add the following
 ```
 sass:
@@ -54,8 +56,7 @@ sass:
 ```
 Be sure to quit out of and restart the Jekyll server anytime the `_config.yml` file is changed.
 #### 6. Update the `css/main.scss` file to this
-```
----
+```---
 ---
 @import bootstrap
 ```
