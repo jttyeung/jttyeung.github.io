@@ -36,6 +36,12 @@ h3 span {
   font-size: 14px;
 }
 
+.post-date {
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+
 /*  ------------NAVIGATION MENU---------- */
 
 .hide {
