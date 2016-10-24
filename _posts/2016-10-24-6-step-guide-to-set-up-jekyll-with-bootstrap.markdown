@@ -40,8 +40,11 @@ I finally decided to go with plain ol' [jekyll][jekyll] and integrate Bootstrap 
 <br />
 
 #### 1. Use the quickstart guide to setup [Jekyll as instructed][jekyll-quickstart].
+
 #### 2. Download [Bootstrap] - the Sass version. Go to the folder `assests\stylesheets`.
+
 #### 3. Place `_bootstrap.scss` and the `bootstrap` folder and all its contents into a new folder named `_sass` in the root of the Jekyll project.
+
 #### 4. In the `Gemfile` of the Jekyll project, add the following line
 
 ```
