@@ -49,18 +49,24 @@ gem "sass"
 ````
 
 #### 5. Go to the `_config.yml` file and add the following
+
 ```
 sass:
     style: :compressed
     sass_dir: _sass
 ```
+
 Be sure to quit out of and restart the Jekyll server anytime the `_config.yml` file is changed.
 #### 6. Update the `css/main.scss` file to this
-```---
+
+```
+---
 ---
 @import bootstrap
 ```
+
 All else in `main.scss` can be deleted unless the built in minima theme will be used. To modify bootstrap settings add code **after** the two sets of dashes, but **before** the `@import bootstrap`. The `bootstrap` folder in `_sass` contains the modifiable variables. An example view of a `main.scss` file when I want to update the headings font typeface to Arial is
+
 ```
 ---
 ---
