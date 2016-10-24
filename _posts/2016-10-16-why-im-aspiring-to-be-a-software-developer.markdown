@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why I'm Aspiring to Become a Software Developer"
+title:  "Why I'm Aspiring to Be a Software Developer"
 date:   2016-10-16 19:47:00 -0800
 categories: [software engineering]
 ---
