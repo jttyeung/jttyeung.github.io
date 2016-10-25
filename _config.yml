@@ -19,7 +19,7 @@ author: Joanne
 description: > # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+url:
 
 timezone: America/Los_Angeles
 
@@ -28,6 +28,12 @@ linkedin_username: jttyeung
 freecodecamp_username: jttyeung
 codepen_username: jttyeung
 instagram_username: thefatso_ul
+
+# Comments
+comments:
+    provider: disqus
+disqus:
+    short_name: jttyeung
 
 # Build settings
 highlighter: rouge

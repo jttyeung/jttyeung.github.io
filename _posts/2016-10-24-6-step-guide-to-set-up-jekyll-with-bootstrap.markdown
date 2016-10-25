@@ -3,6 +3,7 @@ layout: post
 title:  "6-Step Guide to Set Up Jekyll with Bootstrap"
 date:   2016-10-24 10:32:00 -0800
 categories: jekyll bootstrap
+comments: true
 ---
 
 Let me just start off by saying that setting up Jekyll with Bootstrap was ridiculously difficult, but it really doesn't have to be. I had a lot of "fun" (meaning several head-bashing-against-the-wall moments) with this and basically built and tore down this site five times over before it was finally up and running. ([This is the first website I've made since 2002...][about-me] and the web has surely changed since the days of simple HTML and CSS!)
