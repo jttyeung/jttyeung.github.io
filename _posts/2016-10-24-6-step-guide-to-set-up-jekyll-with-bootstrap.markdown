@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "6-Step Guide to Set Up Jekyll with Bootstrap"
-date:   2016-10-24 10:32:00 -0800
+date:   2016-10-24 10:32:00 -0700
 categories: jekyll bootstrap
 comments: true
 ---
@@ -14,17 +14,15 @@ Let me just start off by saying that setting up Jekyll with Bootstrap was ridicu
 - Honorable mention: [ruhoh][ruhoh]
 
 #### Issues I ran into
-- [Jekyll Bootstrap][jekyll-bootstrap] is no longer maintained. The documentation I was trying to follow got me as far as the setup of the website, but I had no idea how to add or utilize Bootstrap still and there were very limited themes available to plug-and-play.
-- I then moved on to [Octopress][octopress]. Again, easy-peasy setup, more themes available, and the Jekyll site structure was starting to look a bit more familiar to me. I was working off Octopress 3.0, the newest version at the time of writing this, and also got stuck on integrating Bootstrap and customizing templates.
+- [Jekyll Bootstrap][jekyll-bootstrap] is no longer maintained. The documentation I was trying to follow got me as far as the setup of the website, but I had no idea how to add or utilize Bootstrap and there were very limited themes available to plug-and-play.
+- I then moved on to [Octopress][octopress]. Again, easy-peasy setup, more themes available, and the Jekyll site structure was starting to look a bit more familiar to me on the second run. I was working off Octopress 3.0, the newest version at the time of writing this, and still got stuck on integrating Bootstrap and customizing templates.
 - I never ended up using [Ruhoh][ruhoh], but this was the successor of Jekyll Bootstrap, made by the same developer. It touted a true all-in-one simple site setup, but I shied away from this option in the end because I felt compelled to try to learn how to setup a site from "scratch".
-
 
 
 ---
 
 
-
-I finally decided to go with plain ol' [jekyll][jekyll] and integrate Bootstrap myself. That's not to say that the above methods wouldn't provide a solid foundation for Jekyll-Bootstrap, but I eventually learned it this way.
+I finally decided to go with plain ol' [jekyll][jekyll], integrate Bootstrap myself, and create my own custom template. That's not to say that the above methods wouldn't provide a solid foundation for Jekyll-Bootstrap, but I eventually learned to do it this way.
 
 #### *This guide is intended for beginners, however it assumes some base knowledge of
 - [Command line][unix]
@@ -84,7 +82,8 @@ $headings-font-family: "Arial", sans-serif;
 ### And that's it in 6 easy steps! -- Bootstrap styling can now be used directly in the HTML.
 
 
-
+<br />
+Did you find this guide helpful? Comment below - feedback is welcome.
 
 
 [about-me]: /software%20engineering/2016/10/16/why-im-aspiring-to-be-a-software-developer.html

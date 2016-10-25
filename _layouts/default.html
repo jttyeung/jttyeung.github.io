@@ -13,33 +13,36 @@
         </main>
         {% include footer.html %}
 
-<script>
+  <script>
 
-$('nav').hide();
-$('button').addClass('hamburger-opaque');
+    $('nav').hide();
+    $('button').addClass('hamburger-opaque');
 
-var $hamburger = $('.hamburger');
+    var $hamburger = $('.hamburger');
 
-$hamburger.on('click', function(e) {
-    $hamburger.toggleClass('is-active');
-    $('nav').removeClass('hide');
-    $('nav').slideToggle(150);
-    $('button').toggleClass('hamburger-opaque');
-    $('button').toggleClass('hamburger-transparent');
-});
+    $hamburger.on('click', function(e) {
+        $hamburger.toggleClass('is-active');
+        $('nav').removeClass('hide');
+        $('nav').slideToggle(150);
+        $('button').toggleClass('hamburger-opaque');
+        $('button').toggleClass('hamburger-transparent');
+    });
 
-$(document).on('click', function(event) {
-  if (!$(event.target).closest('.nav-menu').length) {
-      $hamburger.removeClass('is-active');
-      $('nav').slideUp(150);
-      $('button').removeClass('hamburger-transparent');
-      $('button').addClass('hamburger-opaque');
-  }
-});
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.nav-menu').length) {
+          $hamburger.removeClass('is-active');
+          $('nav').slideUp(150);
+          $('button').removeClass('hamburger-transparent');
+          $('button').addClass('hamburger-opaque');
+      }
+    });
 
-</script>
+  </script>
 
-<script id="dsq-count-scr" src="//jttyeung.disqus.com/count.js" async></script>
+  <script id="dsq-count-scr" src="//jttyeung.disqus.com/count.js" async></script>
+
+  {% include google-analytics.html %}
+
   </body>
 
 </html>
