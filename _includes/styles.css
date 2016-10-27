@@ -17,6 +17,7 @@ img {
 
 .v-padding {
   padding-top: 15px;
+  vertical-align: bottom;
   padding-bottom: 15px;
 }
 
