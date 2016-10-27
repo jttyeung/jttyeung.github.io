@@ -41,6 +41,11 @@ h3 span {
   padding-left: 15px;
 }
 
+.img-thumbnail {
+  height:260px;
+  width:350px;
+}
+
 
 /*  ------------NAVIGATION MENU---------- */
 
