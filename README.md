@@ -1,6 +1,6 @@
 ## jttyeung.github.io
 
-A random thought space and playground for showcaing development projects.
+A random thought space and playground for showcasing development projects.
 
 ## License
 
