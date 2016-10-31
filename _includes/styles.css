@@ -33,6 +33,10 @@ a:hover {
   color: rgba(255, 255, 255, 1);
 }
 
+img:hover {
+  border-color: rgba(161, 137, 132, 1);
+}
+
 h3 span {
   font-size: 14px;
 }
@@ -45,6 +49,7 @@ h3 span {
 .img-thumbnail {
   height:260px;
   width:350px;
+  opacity: 1.0;
 }
 
 
