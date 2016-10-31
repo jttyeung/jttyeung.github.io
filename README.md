@@ -1,4 +1,4 @@
-## jttyeung.github.io
+# jttyeung.github.io
 
 A random thought space and playground for showcasing development projects.
 
