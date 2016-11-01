@@ -7,7 +7,7 @@ permalink: /blog/
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-7">
 
     <h1 class="page-heading">Posts</h1>
 
@@ -21,7 +21,15 @@ permalink: /blog/
       {% endfor %}
     </ul>
 
-    </div><!-- col-md-10 -->
+    </div><!-- col-md-7 -->
+
+<!--
+    <div class="col-md-3">
+      <h3 class="categories-heading">Categories</h3>
+      {% for category in site.categories %} <a href="/{{ category | first }}/">{{ category | first }}</a> {% unless forloop.last %}•{% endunless %} {% endfor %}
+    </div>
+-->
+
   </div><!-- row -->
   <div class="row v-padding">
     <div class="col-md-1"></div>
