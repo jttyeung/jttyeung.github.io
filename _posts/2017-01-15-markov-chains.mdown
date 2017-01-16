@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Markov Chains"
+date:   2017-01-16 13:55:00
+categories: [hackbright]
+comments: true
+---
+
+Probably the coolest thing I've learned about so far is Markov Chains. At a 1,000 ft view, here's what I understand it as: I can take n number of words from a snippet of text or speech, examine what possible words could come after those number of words, and based on the frequency of the next possible words that appear I can find the next probable word that will follow my first set of n words. In my current string of n+1 words, I can then shift one word to the right to get my new set of n words (which excludes the first word) and repeat this chain pattern until I've formulated random comprehensible text. As far as how I understand it, it's a low level model of what appears to be the beginnings of natural language processing and artifical intelligence. Of all the things I've coded so far, this by far is the most interesting thing I've worked on. We then hooked up our program to Twitter's API to push the random messages there. I don't use Twitter, but you can see some automated text examples of the Gettysburg Address and Green Eggs and Ham on [my handle here][twitter] dated Jan 11, 2017.
+
+Week 2 was also the start of object-oriented programming, and admittedly this has been one of the tougher subjects for me to learn. I spent a good deal of time on functional programming in JavaScript, and while I think I understand some of the main concepts of OO and FP, I still struggle somewhat in depth of knowledge and fully understanding. Self? What is self? This? What is this? Why is self sometimes preferred or why is calling the Class is sometimes preferred? Instance of a Class? Instantiating what? There's a ton of lingo that I'm just now adapting to. As we get into the meat of learning the tough parts of programming, there's a very real feel of separation of what coding level people are at in the class. All I can say is that I am continually impressed by how intelligent my cohort is.
+
+I can also see the comaraderie building and we are slowly getting to know each other and seem more enthusiastic to be around one another. One thing I've noticed is that I somehow happen to be more on the extrovert side on the scale of engineers. More honestly, I force myself a great deal to be social - partially because I want to be, and partially because I know it'll be good for me. I appreciate how nice and open everyone is to each other. I think one of my fears coming into this program was the social aspect and whether or not I would get along with anyone. While I wouldn't say I've made life-long friends yet, I would say much of my anxieties have eased so far, and I would credit Hackbright for selecting agreeable cohortmates and helping foster the idea of community, support, and openness.
+
+This next week we are touching upon frontend stuff like HTML, CSS, Bootstrap, and Flask. Flask will be the only new subject for me so I'm thinking it may be easier, but who knows what may come up. It's conflicting for me to want the program to be both easier (obvious reasons) and harder (so I really feel like I'm learning). This past weekend's assessment took me longer than I'd like it to, and it was discomforting to see how much I still didn't know (especially in object-oriented programming). I didn't finish one of my assessments on time partially because I didn't allocate enough time for me to complete it. Now I'm nervously reconsidering all my plans for future weekends - as in I think all future wishful plans are, if avoidable, are going to be cancelled. It's a tough balance between wanting to feel on top of things and being able to enjoy life outside of this program, but right now I'm feeling like I am more stressed than it's worth for the time to go out and play!
+
+
+
+[twitter]: https://twitter.com/isntnotjoanne
