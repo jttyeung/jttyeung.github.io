@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Build All The Things"
-date:   2017-02-04 01:39:00
+date:   2017-02-03 01:39:00
 categories: [hackbright, "developer life"]
 comments: true
 ---
