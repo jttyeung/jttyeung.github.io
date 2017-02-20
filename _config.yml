@@ -32,8 +32,8 @@ codepen_username: jttyeung
 instagram_username: thefatso_ul
 
 # Build settings
-highlighter: rouge
 markdown: kramdown
+highlighter: rouge
 # theme: minima
 
 sass:

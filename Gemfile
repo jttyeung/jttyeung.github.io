@@ -23,5 +23,5 @@ gem "jekyll", "3.2.1"
 #   gem "jekyll-github-metadata", "~> 1.0"
 # end
 
-
+gem "rouge"
 gem "sass"
