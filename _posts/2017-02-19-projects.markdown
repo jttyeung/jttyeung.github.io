@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Projects"
+date:   2017-02-19 16:39:00
+categories: [hackbright, "developer life"]
+comments: true
+---
+
+Project time for Hackbright is 4 weeks long (2-week sprints), with the MVP (Minimum Viable Product) due at the halfway point. We do solo full stack projects, which differs from most engineering programs in that they focus on group projects. There are obviously a few pros and cons to this that immediately come to mind:
+
+Pro:
+- We do the full stack. This is the highlight because no one in the group falls into their comfort zone of developing only certain parts of a whole project. We do everything.
+- That also means the challenge is all open to however hard we are able to push ourselves.
+- Don't need to worry about coordinating pieces together
+
+Cons:
+- No collaboration among teammates, which is a nice soft-skill to work on outside of pair programming
+- Lack of developing advanced git techniques like merging for a team project
+
+We're currently two weeks into our project, and I'm about 98% to my MVP which I thought I'd be able to complete in 3-4 days maxmimum before I started. They say that developers are optimists in estimating project timelines - under that definition, there's no doubt I've shifted from thinking like a Project Manager to like a Developer. :)
+
+It has been nothing short of a mixed emotions rollercoaster over the course of this sprint. On day 1 one of my project I realized that my API did not actually provide the data I needed, and that data was a key piece of the project. It was a silly mistake because I misread the documentation, and at the end of the first day I already felt defeated.
+
+Since then I have found ways to scrape the data I needed using BeautifulSoup and Scrapy, and luckily I previously researched and put together a presentation on those topics for my 10-minute lightning tech talk at Hackbright. To put things into perspective, having not fully read and thouroughly tested my API before starting my project cost me a little more than a week of extra time to set up the data I needed in order to continue.
+
+On a positive note, it has made my project - a great deal - more interesting. The back-end work that is being done is about 10x more complicated now with the data challenges since it scrapes data, cleans the data using RegEx and XPATH finders, and automatically fills scraped data into a PostgreSQL database. Speaking of which: database modeling. Modeling became somewhat of a chicken or egg situation for me. I was going off assumptions that I could get the data I needed, and then building a model around that. As the data changed, my model had to change, and there have been likely in the range of 50-100 times I've ran "createdb" and "dropdb". In my project I was also initially trying to database data by neighborhood/location names, but since naming is inconsistent across platforms I am instead geocoding locations into latitude and longitude and storing them as objects in PostgreSQL using [PostGIS][postgis], a spatial and geographic aware extension for PostgreSQL, which will eventually allow me to calculate distances between data points quicker when querying.
+
+Besides the technical, the last two weeks have also taught me a few other things:
+
+- Information is not as free or easy to obtain on the Internet, as proved in the above. Moreover, using data across multiple platforms is a huge issue since it can be difficult to find data that is presented the same between two sources.
+
+- Read. I am a skimmer, guilty as charged. Moving towards the direction of tech I thought I could avoid having to read since it feels more like a "doing" than a "reading" kind of thing, but nope... I was wrong. A good developer reads the documentation, reads through multiple pages of Stack Overflow before deciding on a correct solution, and reads through their error messages. I've never been happier in my life about getting error messages displayed on my computer and it may sound strange to say this, but I am just downright giddy when I get errors (because it's so much better than not getting anything when your shit doesn't work).
+
+- Take a break. I've been dreaming in code, in code-like constructs, or about Hackbright on an almost daily basis. When people talk about things that sound like a programming-related term, I immediately jump to the technical definition rather than what would be more obviously used in the English language. Programming or thinking about code for 12 hour days is insanity. Fun, but destructive to the mind and body. I don't know if I can help my changed state of mind, but I have learned to take breaks, to meditate, and to reward myself (mostly through food and chocolate) to keep myself sane.
+
+Hoping to blog more about hard lessons learned and more specific technical topics in some coming posts - stay tuned.
+
+
+
+[postgis]: http://postgis.net/
