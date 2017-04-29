@@ -10,18 +10,21 @@ When I built my Hackbright project, the biggest setback for me was obtaining dat
 
 (BeautifulSoup is another commonly used web scraper, but it isn't as robust as Scrapy. I actually did a lightning tech talk on web scraping using BeautifulSoup and Scrapy, and you can [check out the slides here][slides], or keep reading for the verbose tutorial version.)
 
-**WHAT** is a web crawler and scraper? In short, a crawler (aka spider) "crawls" or surfs the web for you, and a scraper extracts data from a particular web page. Put the two together and you can get data from multiple pages automatically and very, very quickly. It's some powerful shit.
+##### **WHAT**
+is a web crawler and scraper? In short, a crawler (aka spider) "crawls" or surfs the web for you, and a scraper extracts data from a particular web page. Put the two together and you can get data from multiple pages automatically and very, very quickly. It's some powerful shit.
 
-**WHY** choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is your language of choice, chances are you'll want to use BeautifulSoup or Scrapy. There are amazing tutorials out there for BeautifulSoup. In fact, it's relatively simple to use so for the remainder of this I will only be diving into how to use Scrapy. This is intended to be a beginner's guide and we'll just be scraping (haha) the surface of what Scrapy can be used for.
+##### **WHY**
+choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is your language of choice, chances are you'll want to use BeautifulSoup or Scrapy. There are amazing tutorials out there for BeautifulSoup. In fact, it's relatively simple to use so for the remainder of this I will only be diving into how to use Scrapy. This is intended to be a beginner's guide and we'll just be scraping (haha) the surface of what Scrapy can be used for.
 
 Helpful things to know before you get started:
 - Python (and an understanding of object oriented programming and callbacks)
 - CSS selectors or prefably XPATH selectors
 
-**HOW** this is all done:
+##### **HOW** this is all done:
 
 The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. If this tutorial is more than a few years old, the code may not work if the structure of the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
 
+<br>
 ### Objective
 1. Scrape Craigslist data from the San Francisco apartment rental listings. I want to retrieve the following data for each listing:
 - The unique craigslist ID
@@ -32,6 +35,7 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
 - The date posted
 2. Stream data into my PostgreSQL database directly from scraping
 
+<br>
 ### Initial Setup
 1. I assume you have a [virtualenv][virtualenv] setup, and you know how to activate one of those. Do that now. If not the rest of the steps should work fine, but it's highly advisable to use a virtualenv.
 2. Install Scrapy.
@@ -45,25 +49,26 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
 
 You should now have a directory folder that looks something like this:<br>
 ├── project-name<br>
-│   └── project-name<br>
-│       ├── __init__.py<br>
-│       ├── __init__.pyc<br>
-│       ├── items.py<br>
-│       ├── middlewares.py<br>
-│       ├── pipelines.py<br>
-│       ├── settings.py<br>
-│       ├── settings.pyc<br>
-│       └── spiders<br>
-│           ├── __init__.py<br>
-│           ├── __init__.pyc<br>
-│           └── spider-name.py<br>
+│ &nbsp; &nbsp; &nbsp; └── project-name<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── items.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── middlewares.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── pipelines.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spiders<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spider-name.py<br>
 └── scrapy.cfg<br>
 
+<br>
 ### Configure Your Spider
 1. Go to your spiders folder and open spider-name.py. This is where you'll do the bulk of your crawling and scraping. The spider should define the initial request (site) to make, (optionally) how to follow the links from the initial request, and how to extract page content.
 2. Here's the breakdown of what your code should look like and why:
 
-```python
+``` python
 
     # You'll need the below modules to create your spider:
     from scrapy.spiders import CrawlSpider, Spider, Request, Rule
@@ -112,12 +117,13 @@ You should now have a directory folder that looks something like this:<br>
             yield item
 ```
 
+<br>
 ### Configure Your Items.py
 1. Go to your items.py file.
 2. This file uses a dictionary-like API defined as a class to create a dictionary of the data that you collect for each item collected. In this case, each item is every unique rental listing I scrape. For each item, dictionary keys need to be created using `scrapy.Field()`.
 3. Hint: You might want your keys labeled to be similar to your database columns. Here's what it might look like:
 
-```python
+``` python
 
     import scrapy
 
@@ -146,6 +152,7 @@ You should now have a directory folder that looks something like this:<br>
         latlng = scrapy.Field()
 ```
 
+<br>
 ### Configure Your Pipelines.py (If Needed)
 Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into PostgreSQL, using SQLAlchemy. Here's an example of what your code might look like:
 
@@ -290,12 +297,13 @@ Pipelines.py is pretty damn awesome. You can use this file to cleanse or validat
 
 Phew! That's a lot of code! We're getting close. One last step...
 
+<br>
 ### Connecting All The Pieces Together
 1. Check out your settings.py folder.
 2. I also really love the settings file. It will be your best friend. There's a lot of code that is commented out and embedded here is a lot of functionality you can play with, but all you have to configure is up to you. The following highlights what is necessary for this setup.
 3. Uncomment ITEM_PIPELINES if you're using pipelines.py. List out the path and class name of the pipelines using dot notation, and put a number next to it. Conventionally, you use numbers in the hundreds, and each number represents the numerical order that Scrapy will complete each task. So in the below example, my scraper is set to 100 so it will complete before it tries to write to the database (300).
 
-```python
+``` python
     ITEM_PIPELINES = {
        'rent_scraper.pipelines.RentScraperPipeline': 100,
        # 'rent_scraper.pipelines.JsonWriterPipeline': 200,  # I commented this out, but this is an example of what you could do.
@@ -303,12 +311,13 @@ Phew! That's a lot of code! We're getting close. One last step...
     }
 ```
 
+<br>
 ### One More Thing
 In your settings.py file, some very important features to pay attention to are AUTOTHROTTLE_* and CLOSESPIDER_*.
 - AUTOTHROTTLE can be used to delay the speed at which the pages are scraped for data.
 - CLOSESPIDER is useful if you want to automatically shut down the spider after you obtain a certain amount of data or have made a certain number of web requests. This is not included in the default build, but you can add one or both of the following example lines of code to do so:
 
-```python
+``` python
     # Close Spider after number of items scraped
     CLOSESPIDER_ITEMCOUNT = 5
 
