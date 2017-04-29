@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to Build A Webcrawler and Scraper for Craigslist Using Scrapy"
+title:  "How to Build A Web Crawler and Scraper for Craigslist Using Scrapy"
 date:   2017-04-29 12:19:00
 categories: [web scraping]
 comments: true
@@ -8,7 +8,7 @@ comments: true
 
 When I built my Hackbright project, the biggest setback for me was obtaining data for it. When an API doesn't provide what you need, what can you do? The answer: build your own web crawler and scraper. This is where Scrapy, a framework written in Python, comes into play.
 
-(BeautifulSoup is another commonly used web scraper, but it isn't as robust as Scrapy. I actually did a lightning tech talk on web scraping using BeautifulSoup and Scrapy, and you can [check out the slides here][slides], or keep reading for the verbose tutorial version.)
+(BeautifulSoup is another commonly used web scraper, but it isn't as robust as Scrapy. I actually did a lightning tech talk on web scraping using BeautifulSoup and Scrapy, and you can [check out the slides here][slides], checkout my [github code here][github], or keep reading for the verbose tutorial version.)
 
 ##### **WHAT**
 is a web crawler and scraper? In short, a crawler (aka spider) "crawls" or surfs the web for you, and a scraper extracts data from a particular web page. Put the two together and you can get data from multiple pages automatically and very, very quickly. It's some powerful shit.
@@ -57,8 +57,8 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
   `$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
 
 You should now have a directory folder that looks something like this:<br>
-.
-+--- project-name<br>
+
+├── project-name<br>
 │ &nbsp; &nbsp; &nbsp; └── project-name<br>
 │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
 │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
@@ -351,4 +351,5 @@ That's all folks! Enjoy :)
 
 
 [slides]: https://docs.google.com/presentation/d/1hfpXFTexe2CmSKzzQrqyKcoqw7QHfcwUruNwX2sDsZ0/edit?usp=sharing
+[github]: https://github.com/jttyeung/investable/tree/master/rent_scraper/rent_scraper
 [virtualenv]: https://virtualenv.pypa.io/en/stable
