@@ -9,21 +9,25 @@ comments: true
 When I built my Hackbright project, the biggest setback for me was obtaining data for it. When an API doesn't provide what you need, what can you do? The answer: build your own web crawler and scraper. This is where Scrapy, a framework written in Python, comes into play.
 
 (BeautifulSoup is another commonly used web scraper, but it isn't as robust as Scrapy. I actually did a lightning tech talk on web scraping using BeautifulSoup and Scrapy, and you can [check out the slides here][slides], checkout my [github code here][github], or keep reading for the verbose tutorial version.)
-
+<br>
 ##### **WHAT**
 is a web crawler and scraper? In short, a crawler (aka spider) "crawls" or surfs the web for you, and a scraper extracts data from a particular web page. Put the two together and you can get data from multiple pages automatically and very, very quickly. It's some powerful shit.
-
+<br>
 ##### **WHY**
-choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is your language of choice, chances are you'll want to use BeautifulSoup or Scrapy. There are amazing tutorials out there for BeautifulSoup. In fact, it's relatively simple to use so for the remainder of this I will only be diving into how to use Scrapy. This is intended to be a beginner's guide and we'll just be scraping (haha) the surface of what Scrapy can be used for.
+choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is your language of choice, chances are you'll want to use BeautifulSoup or Scrapy. There are amazing tutorials out there for BeautifulSoup. In fact it's relatively simple to use so for the remainder of this post I will only be diving into how to set up Scrapy. This is intended to be a beginner's guide and we'll just be scraping (haha) the surface of what Scrapy can be used for.
 
 Helpful things to know before you get started:
 - Python (and an understanding of object oriented programming and callbacks)
-- How to use CSS selectors or preferably XPATH selectors
-
+- How to use [CSS selectors][css] or preferably [XPATH selectors][xpath] and what they are. Scrapy also [talks about these a little][scrapy-selectors]. Scrapy is fan-freaking-tastic and also provides a command line tool that allows you to do checks against what you're trying to select with CSS or XPATH. Do this after you've installed Scrapy and created your project in the Initial Setup below. Here are some example uses:
+    1. `$ scrapy shell insert-your-url`
+    2. try: `$ response.status`
+    3. or: `$ response.xpath('//title').extract()`
+    4. or: `$ response.css('title').extract()`
+<br>
 ##### **HOW**
 this is all done:
 
-The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. If this tutorial is more than a few years old, the code may not work if the structure of the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
+The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. Note: If this tutorial is more than a few years old, the code may not work if the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
 
 <br>
 ### Objective
@@ -355,3 +359,6 @@ That's all folks! Enjoy :)
 [slides]: https://docs.google.com/presentation/d/1hfpXFTexe2CmSKzzQrqyKcoqw7QHfcwUruNwX2sDsZ0/edit?usp=sharing
 [github]: https://github.com/jttyeung/investable/tree/master/rent_scraper/rent_scraper
 [virtualenv]: https://virtualenv.pypa.io/en/stable
+[xpath]: https://www.tutorialspoint.com/xpath/
+[css]: https://flukeout.github.io/
+[scrapy-selectors]: https://doc.scrapy.org/en/latest/topics/selectors.html
