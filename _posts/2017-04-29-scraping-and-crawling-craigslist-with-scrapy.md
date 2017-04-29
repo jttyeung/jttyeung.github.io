@@ -9,9 +9,11 @@ comments: true
 When I built my Hackbright project, the biggest setback for me was obtaining data for it. When an API doesn't provide what you need, what can you do? The answer: build your own web crawler and scraper. This is where Scrapy, a framework written in Python, comes into play.
 
 (BeautifulSoup is another commonly used web scraper, but it isn't as robust as Scrapy. I actually did a lightning tech talk on web scraping using BeautifulSoup and Scrapy, and you can [check out the slides here][slides], checkout my [github code here][github], or keep reading for the verbose tutorial version.)
+
 <br>
 ##### **WHAT**
 is a web crawler and scraper? In short, a crawler (aka spider) "crawls" or surfs the web for you, and a scraper extracts data from a particular web page. Put the two together and you can get data from multiple pages automatically and very, very quickly. It's some powerful shit.
+
 <br>
 ##### **WHY**
 choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is your language of choice, chances are you'll want to use BeautifulSoup or Scrapy. There are amazing tutorials out there for BeautifulSoup. In fact it's relatively simple to use so for the remainder of this post I will only be diving into how to set up Scrapy. This is intended to be a beginner's guide and we'll just be scraping (haha) the surface of what Scrapy can be used for.
@@ -23,6 +25,7 @@ Helpful things to know before you get started:
     2. try: `$ response.status`
     3. or: `$ response.xpath('//title').extract()`
     4. or: `$ response.css('title').extract()`
+
 <br>
 ##### **HOW**
 this is all done:
@@ -169,7 +172,7 @@ You should now have a directory folder that looks something like this:<br>
 
 <br>
 ### Configure Your Pipelines.py (If Needed)
-Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into PostgreSQL, using SQLAlchemy. Here's an example of what your code might look like:
+Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into my PostgreSQL database using SQLAlchemy. Here's an example of what your code might look like:
 
 ``` python
     from scrapy.exceptions import DropItem  # Module to handle (drop) bad items
@@ -232,7 +235,7 @@ Pipelines.py is pretty damn awesome. You can use this file to cleanse or validat
                     location = find_location[1]
                     geo_location = geocoder.google(location)
 
-                # If a geocoded location exists get latitude and longitude, otherwise drop record
+                    # If a geocoded location exists get latitude and longitude, otherwise drop record
                     if geo_location:
                         latitude = geo_location.lat
                         longitude = geo_location.lng
@@ -308,6 +311,7 @@ Pipelines.py is pretty damn awesome. You can use this file to cleanse or validat
                 raise
 
             finally:
+                # Close the database session at the end of all tries
                 self.session.close()
 ```
 
@@ -342,11 +346,11 @@ In your settings.py file, some very important features to pay attention to are A
     CLOSESPIDER_PAGECOUNT = 10
 ```
 
-Why do you care? Well, most companies don't enjoy being bombarded by webcrawler requests and in fact many will ban you if they find out you're using up all their bandwidth. Some companies are even a little touchy-feely when it comes to (mis)using their data, so the best thing to do is to be respectful and use Scrapy responsibly. (This is intended to be an educational guide, and I am not responsible for your actions.) Scrape responsibily - with great power comes great responsibility!
+Why should you care? Well, most companies don't enjoy being bombarded by webcrawler requests and in fact many will ban you if they find out you're using up all their bandwidth. Some companies even get a little touchy-feely when it comes to (mis)using their data, so the best thing to do is to be respectful about it. (Note: This is intended to be an educational guide, and I am not responsible for your actions.) Scrape responsibily - with great power comes great responsibility!
 
 <br>
-### Run That Sucker (or crawl, if it's a blood-sucking spider?)
-Final step - run your spider.
+### And Lastly... Run That Sucker! (or crawl, if it's a blood-sucking spider?)
+Final step - run your spider using the following command:
 
 `$ scrapy crawl insert-name-of-your-spider`
 
