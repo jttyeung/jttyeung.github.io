@@ -341,9 +341,11 @@ In your settings.py file, some very important features to pay attention to are A
 Why do you care? Well, most companies don't enjoy being bombarded by webcrawler requests and in fact many will ban you if they find out you're using up all their bandwidth. Some companies are even a little touchy-feely when it comes to (mis)using their data, so the best thing to do is to be respectful and use Scrapy responsibly. (This is intended to be an educational guide, and I am not responsible for your actions.) Scrape responsibily - with great power comes great responsibility!
 
 <br>
-### Run That Sucker
+### Run That Sucker (or crawl, if it's a blood-sucking spider?)
 Final step - run your spider.
+
 `$ scrapy crawl insert-name-of-your-spider`
+
 YESSSS!!!!!
 
 <br>
