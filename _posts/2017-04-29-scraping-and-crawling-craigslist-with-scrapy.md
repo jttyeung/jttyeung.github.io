@@ -18,7 +18,7 @@ choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is y
 
 Helpful things to know before you get started:
 - Python (and an understanding of object oriented programming and callbacks)
-- CSS selectors or prefably XPATH selectors
+- How to use CSS selectors or preferably XPATH selectors
 
 ##### **HOW** this is all done:
 
@@ -38,30 +38,39 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
 <br>
 ### Initial Setup
 1. I assume you have a [virtualenv][virtualenv] setup, and you know how to activate one of those. Do that now. If not the rest of the steps should work fine, but it's highly advisable to use a virtualenv.
+
 2. Install Scrapy.
+
 `$ pip install scrapy`
+
 3. Create your project and give it a name. This will create a folder for that project.
+
 `$ scrapy startproject insert-name-of-your-project`
+
 4. Change directory into your project folder.
+
 `$ cd name-of-you-project-you-created-in-step-3`
+
 5. Create your spider by giving it a name and a start URL.
+
 `$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
 
 You should now have a directory folder that looks something like this:<br>
-├── project-name<br>
-│ &nbsp; &nbsp; &nbsp; └── project-name<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── items.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── middlewares.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── pipelines.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.pyc<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spiders<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
-│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spider-name.py<br>
-└── scrapy.cfg<br>
+.
++-- project-name<br>
+| &nbsp; +-- project-name<br>
+| &nbsp; +-- __init__.py<br>
+| &nbsp; +-- __init__.pyc<br>
+| &nbsp; +-- items.py<br>
+| &nbsp; +-- middlewares.py<br>
+| &nbsp; +-- pipelines.py<br>
+| &nbsp; +-- settings.py<br>
+| &nbsp; +-- settings.pyc<br>
+| &nbsp; +-- spiders<br>
+| &nbsp; +-- __init__.py<br>
+| &nbsp; +-- __init__.pyc<br>
+| &nbsp; +-- spider-name.py<br>
++-- scrapy.cfg<br>
 
 <br>
 ### Configure Your Spider
@@ -69,11 +78,11 @@ You should now have a directory folder that looks something like this:<br>
 2. Here's the breakdown of what your code should look like and why:
 
 ``` python
-
     # You'll need the below modules to create your spider:
     from scrapy.spiders import CrawlSpider, Spider, Request, Rule
     from scrapy.linkextractors import LinkExtractor
-    from rent_scraper.items import SpiderNameItem  # Replace "SpiderNameItem" with the class name in your items.py.
+    # Replace "SpiderNameItem" with the class name in your items.py.
+    from rent_scraper.items import SpiderNameItem 
 
 
     class YourSpiderName(CrawlSpider):  # Make sure you're inheriting from the CrawlSpider class.
@@ -87,12 +96,14 @@ You should now have a directory folder that looks something like this:<br>
             # This rule extracts all links from the start URL page using the XPATH selector.
             # In this case it is only looking to extract links that are individual rental
             # posting links and not other links to ad sites or elsewhere on Craigslist.
-            Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="result-title hdrlnk"]')), follow=True, callback='parse_item'),
+            Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="result-title hdrlnk"]')),
+            follow=True, callback='parse_item'),
             
             # This rule says to follow/do a GET request on the extracted link,
             # returning the response to the callback function,
             # which is the parse_tem() function below.
-            Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[contains(@class, "button next")]')), follow=True, callback='parse_item'),
+            Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[contains(@class, "button next")]')),
+            follow=True, callback='parse_item'),
         )
 
         def parse_item(self, response):
@@ -124,7 +135,6 @@ You should now have a directory folder that looks something like this:<br>
 3. Hint: You might want your keys labeled to be similar to your database columns. Here's what it might look like:
 
 ``` python
-
     import scrapy
 
 
@@ -157,7 +167,7 @@ You should now have a directory folder that looks something like this:<br>
 Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into PostgreSQL, using SQLAlchemy. Here's an example of what your code might look like:
 
 ``` python
-    from scrapy.exceptions import DropItem  # Module to handle bad items
+    from scrapy.exceptions import DropItem  # Module to handle (drop) bad items
     # The below are optional - import all the libraries you need here
     import re
     import urllib
@@ -168,7 +178,8 @@ Pipelines.py is pretty damn awesome. You can use this file to cleanse or validat
 
 
     class RentScraperPipeline(object):
-        """ Scrubs scraped data of whitespaces and interesting characters and returns it as a data maintenance-friendly dictionary. """
+        """ Scrubs scraped data of whitespaces and interesting characters
+        and returns it as a data maintenance-friendly dictionary. """
 
         def process_item(self, item, spider):
 
@@ -306,7 +317,8 @@ Phew! That's a lot of code! We're getting close. One last step...
 ``` python
     ITEM_PIPELINES = {
        'rent_scraper.pipelines.RentScraperPipeline': 100,
-       # 'rent_scraper.pipelines.JsonWriterPipeline': 200,  # I commented this out, but this is an example of what you could do.
+       # I commented this out, but this is an example of what you could do if you had a third pipeline.
+       # 'rent_scraper.pipelines.JsonWriterPipeline': 200,
        'rent_scraper.pipelines.PostgresqlPipeline': 300
     }
 ```
@@ -327,6 +339,7 @@ In your settings.py file, some very important features to pay attention to are A
 
 Why do you care? Well, most companies don't enjoy being bombarded by webcrawler requests and in fact many will ban you if they find out you're using up all their bandwidth. Some companies are even a little touchy-feely when it comes to (mis)using their data, so the best thing to do is to be respectful and use Scrapy responsibly. (This is intended to be an educational guide, and I am not responsible for your actions.) Scrape responsibily - with great power comes great responsibility!
 
+<br>
 That's all folks! Enjoy :)
 
 
