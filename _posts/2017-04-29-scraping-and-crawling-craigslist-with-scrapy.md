@@ -20,7 +20,8 @@ Helpful things to know before you get started:
 - Python (and an understanding of object oriented programming and callbacks)
 - How to use CSS selectors or preferably XPATH selectors
 
-##### **HOW** this is all done:
+##### **HOW**
+this is all done:
 
 The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. If this tutorial is more than a few years old, the code may not work if the structure of the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
 
@@ -41,36 +42,36 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
 
 2. Install Scrapy.
 
-`$ pip install scrapy`
+  `$ pip install scrapy`
 
 3. Create your project and give it a name. This will create a folder for that project.
 
-`$ scrapy startproject insert-name-of-your-project`
+  `$ scrapy startproject insert-name-of-your-project`
 
 4. Change directory into your project folder.
 
-`$ cd name-of-you-project-you-created-in-step-3`
+  `$ cd name-of-your-project-you-created-in-step-3`
 
 5. Create your spider by giving it a name and a start URL.
 
-`$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
+  `$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
 
 You should now have a directory folder that looks something like this:<br>
 .
-+-- project-name<br>
-| &nbsp; +-- project-name<br>
-| &nbsp; +-- __init__.py<br>
-| &nbsp; +-- __init__.pyc<br>
-| &nbsp; +-- items.py<br>
-| &nbsp; +-- middlewares.py<br>
-| &nbsp; +-- pipelines.py<br>
-| &nbsp; +-- settings.py<br>
-| &nbsp; +-- settings.pyc<br>
-| &nbsp; +-- spiders<br>
-| &nbsp; +-- __init__.py<br>
-| &nbsp; +-- __init__.pyc<br>
-| &nbsp; +-- spider-name.py<br>
-+-- scrapy.cfg<br>
++--- project-name<br>
+│ &nbsp; &nbsp; &nbsp; └── project-name<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── items.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── middlewares.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── pipelines.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── settings.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spiders<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.py<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── __init__.pyc<br>
+│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── spider-name.py<br>
+└── scrapy.cfg<br>
 
 <br>
 ### Configure Your Spider
@@ -324,7 +325,7 @@ Phew! That's a lot of code! We're getting close. One last step...
 ```
 
 <br>
-### One More Thing
+### Oh, But One More Thing
 In your settings.py file, some very important features to pay attention to are AUTOTHROTTLE_* and CLOSESPIDER_*.
 - AUTOTHROTTLE can be used to delay the speed at which the pages are scraped for data.
 - CLOSESPIDER is useful if you want to automatically shut down the spider after you obtain a certain amount of data or have made a certain number of web requests. This is not included in the default build, but you can add one or both of the following example lines of code to do so:
@@ -338,6 +339,12 @@ In your settings.py file, some very important features to pay attention to are A
 ```
 
 Why do you care? Well, most companies don't enjoy being bombarded by webcrawler requests and in fact many will ban you if they find out you're using up all their bandwidth. Some companies are even a little touchy-feely when it comes to (mis)using their data, so the best thing to do is to be respectful and use Scrapy responsibly. (This is intended to be an educational guide, and I am not responsible for your actions.) Scrape responsibily - with great power comes great responsibility!
+
+<br>
+### Run That Sucker
+Final step - run your spider.
+`$ scrapy crawl insert-name-of-your-spider`
+YESSSS!!!!!
 
 <br>
 That's all folks! Enjoy :)
