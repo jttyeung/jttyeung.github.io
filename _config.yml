@@ -32,8 +32,16 @@ codepen_username: jttyeung
 instagram_username: thefatso_ul
 
 # Build settings
-markdown: kramdown
+lsi: false
+safe: true
+source:
+incremental: false
 highlighter: rouge
+gist:
+    noscript: false
+kramdown:
+    math_engine: mathjax
+
 # theme: minima
 
 sass:
