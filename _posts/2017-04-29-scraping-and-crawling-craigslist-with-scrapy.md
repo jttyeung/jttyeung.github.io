@@ -62,6 +62,7 @@ You should now have a directory folder that looks something like this:
 ### Configure Your Spider
 1. Go to your spiders folder and open spider-name.py. This is where you'll do the bulk of your crawling and scraping. The spider should define the initial request (site) to make, (optionally) how to follow the links from the initial request, and how to extract page content.
 2. Here's the breakdown of what your code should look like and why:
+
 ```python
 
 # You'll need the below modules to create your spider:
@@ -109,13 +110,13 @@ class YourSpiderName(CrawlSpider):  # Make sure you're inheriting from the Crawl
         # Finally, once a single rental page and data has been scraped,
         # the crawler yields an iterator item that can later be called.
         yield item
-
 ```
 
 ### Configure Your Items.py
 1. Go to your items.py file.
 2. This file uses a dictionary-like API defined as a class to create a dictionary of the data that you collect for each item collected. In this case, each item is every unique rental listing I scrape. For each item, dictionary keys need to be created using `scrapy.Field()`.
 3. Hint: You might want your keys labeled to be similar to your database columns. Here's what it might look like:
+
 ```python
 
 import scrapy
@@ -147,7 +148,8 @@ class SpiderNameItem(scrapy.Item):
 
 ### Configure Your Pipelines.py (If Needed)
 Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into PostgreSQL, using SQLAlchemy. Here's an example of what your code might look like:
-```
+
+``` python
 from scrapy.exceptions import DropItem  # Module to handle bad items
 # The below are optional - import all the libraries you need here
 import re
@@ -292,6 +294,7 @@ Phew! That's a lot of code! We're getting close. One last step...
 1. Check out your settings.py folder.
 2. I also really love the settings file. It will be your best friend. There's a lot of code that is commented out and embedded here is a lot of functionality you can play with, but all you have to configure is up to you. The following highlights what is necessary for this setup.
 3. Uncomment ITEM_PIPELINES if you're using pipelines.py. List out the path and class name of the pipelines using dot notation, and put a number next to it. Conventionally, you use numbers in the hundreds, and each number represents the numerical order that Scrapy will complete each task. So in the below example, my scraper is set to 100 so it will complete before it tries to write to the database (300).
+
 ```python
 ITEM_PIPELINES = {
    'rent_scraper.pipelines.RentScraperPipeline': 100,
@@ -304,6 +307,7 @@ ITEM_PIPELINES = {
 In your settings.py file, some very important features to pay attention to are AUTOTHROTTLE_* and CLOSESPIDER_*.
 - AUTOTHROTTLE can be used to delay the speed at which the pages are scraped for data.
 - CLOSESPIDER is useful if you want to automatically shut down the spider after you obtain a certain amount of data or have made a certain number of web requests. This is not included in the default build, but you can add one or both of the following example lines of code to do so:
+
 ```python
 # Close Spider after number of items scraped
 CLOSESPIDER_ITEMCOUNT = 5
