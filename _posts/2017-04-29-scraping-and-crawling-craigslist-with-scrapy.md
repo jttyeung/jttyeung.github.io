@@ -20,11 +20,11 @@ choose BeautifulSoup or Scrapy? The major advantage here is Python. If this is y
 
 Helpful things to know before you get started:
 - Python (and an understanding of object oriented programming and callbacks)
-- How to use [CSS selectors][css] or preferably [XPATH selectors][xpath] and what they are. Scrapy also [talks about these a little][scrapy-selectors]. Scrapy is fan-freaking-tastic and also provides a command line tool that allows you to do checks against what you're trying to select with CSS or XPATH. Do this after you've installed Scrapy and created your project in the Initial Setup below. Here are some example uses:
-    1. `$ scrapy shell insert-your-url`
-    2. try: `$ response.status`
-    3. or: `$ response.xpath('//title').extract()`
-    4. or: `$ response.css('title').extract()`
+- How to use [CSS selectors][css] or preferably [XPATH selectors][xpath] and what they are. Scrapy also [talks about these a little][scrapy-selectors]. Scrapy is fan-freaking-tastic and also provides a command line tool that allows you to check the accuracy of your CSS or XPATH selectors. This is extremely helpful for troubleshooting after you've installed Scrapy and created your project in the Initial Setup described below. Once you're ready to configure your spider and you're writing your CSS/XPATH selectors, here are some examples to get you started:
+    1. First, in your terminal type: `$ scrapy shell insert-your-url` -- this sends a GET request for the URL
+    2. Now that you are in the Scrapy Shell, try: `$ response.status` -- this gives you the status code of the response
+    3. Or try: `$ response.xpath('//title').extract()` -- XPATH selector way of saying 'give me the title of that page!'
+    4. Or: `$ response.css('title').extract()` -- CSS selector way of saying 'give me the title of that page!'
 
 <br>
 ##### **HOW**
@@ -169,6 +169,9 @@ You should now have a directory folder that looks something like this:<br>
         longitude = scrapy.Field()
         latlng = scrapy.Field()
 ```
+
+<br>
+Hint: If you're building your scraper for the first time it's helpful to bypass the next steps and check to see if your spider setup is working. To do this, run: `$ scrapy crawl insert-name-of-your-spider -o test.json`. This will create a dump of your item(s) to a JSON file so you can troubleshoot and inspect your data. (In place of .json you can also use .jl, .csv, or .xml.)
 
 <br>
 ### Configure Your Pipelines.py (If Needed)
