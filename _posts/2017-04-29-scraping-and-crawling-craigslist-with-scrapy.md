@@ -28,9 +28,7 @@ Helpful things to know before you get started:
 
 <br>
 ##### **HOW**
-this is all done:
-
-The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. Note: If this tutorial is more than a few years old, the code may not work if the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
+is this all done? The below tutorial is a demonstration of how to use Scrapy to crawl and scrape Craigslist for available rentals on the market. Note: If this tutorial is more than a few years old, the code may not work if the DOM structure of Criagslist has changed. This is built using Scrapy version 1.3.1 and Python 2.7.
 
 <br>
 ### Objective
@@ -49,19 +47,19 @@ The below tutorial is a demonstration of how to use Scrapy to crawl and scrape C
 
 2. Install Scrapy.
 
-  `$ pip install scrapy`
+    `$ pip install scrapy`
 
 3. Create your project and give it a name. This will create a folder for that project.
 
-  `$ scrapy startproject insert-name-of-your-project`
+    `$ scrapy startproject insert-name-of-your-project`
 
 4. Change directory into your project folder.
 
-  `$ cd name-of-your-project-you-created-in-step-3`
+    `$ cd name-of-your-project-you-created-in-step-3`
 
 5. Create your spider by giving it a name and a start URL.
 
-  `$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
+    `$ scrapy genspider insert-name-of-your-spider insert-url-to-start-crawling-at`
 
 You should now have a directory folder that looks something like this:<br>
 
@@ -117,7 +115,7 @@ You should now have a directory folder that looks something like this:<br>
         def parse_item(self, response):
             """ Using XPATH, parses data from the HTML responses and returns a dictionary-like item. """
 
-            # Specifies what an Item is; In this case it is referring to the items.py. class
+            # Specifies what an Item is; in this case it is referring to the items.py class name
             # and instantiating a dictionary for a single item (rental).
             item = SpiderNameItem()
 
@@ -159,9 +157,9 @@ You should now have a directory folder that looks something like this:<br>
         # Additional dictionary keys created upon data cleanse in pipelines.py.
         # These were added fields because I created them later in the pipelines file,
         # and they were not collected in the initial scrape using my spider.
-        # For example, the rental attributes actually contain data on bedrooms, bathrooms,
-        # and sqft, but it was easier for me to scrape all that data in one chunk and
-        # separate the code I used to clean up that data in my pipelines.py file.
+        # For example, the rental attributes (above) actually contain data on bedrooms,
+        # bathrooms, and sqft, but it was easier for me to scrape all that data in one chunk
+        # and separate the code used clean up that data into my pipelines.py file.
         bedrooms = scrapy.Field()
         bathrooms = scrapy.Field()
         sqft = scrapy.Field()
@@ -175,7 +173,7 @@ Hint: If you're building your scraper for the first time it's helpful to bypass 
 
 <br>
 ### Configure Your Pipelines.py (If Needed)
-Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and or write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into my PostgreSQL database using SQLAlchemy. Here's an example of what your code might look like:
+Pipelines.py is pretty damn awesome. You can use this file to cleanse or validate your data, check for duplicates, and write your data into a database/external file (like JSON or JSON Lines). It's what I call the place to put all that extra post-crawling/scraping code. You can also get creative and make multiple pipelines for different spiders, etc. Below I'm streaming my data into my PostgreSQL database using SQLAlchemy. Here's an example of what your code might look like and why:
 
 ``` python
     from scrapy.exceptions import DropItem  # Module to handle (drop) bad items
@@ -198,7 +196,7 @@ Pipelines.py is pretty damn awesome. You can use this file to cleanse or validat
             if item['cl_id']:
                 item['cl_id'] = re.split('\s', ''.join(item['cl_id']))[2]
 
-            # Finds rental price; if none supplied or if it's listed below $50, drop item
+            # Finds rental price; if none supplied or if it's listed at or below $50, drop item
             if item['price']:
                 price = int(re.sub('[^\d.]+', '', ''.join(item['price'])))
                 if price > 50:
@@ -323,7 +321,7 @@ Phew! That's a lot of code! We're getting close. One last step...
 <br>
 ### Connecting All The Pieces Together
 1. Check out your settings.py folder.
-2. I also really love the settings file. It will be your best friend. There's a lot of code that is commented out and embedded here is a lot of functionality you can play with, but all you have to configure is up to you. The following highlights what is necessary for this setup.
+2. I also really love the settings file. It will be your best friend. There's a lot of code that is commented out and embedded here is a lot of functionality you can play with, but what you have to configure is up to you. The following highlights what is necessary for this setup.
 3. Uncomment ITEM_PIPELINES if you're using pipelines.py. List out the path and class name of the pipelines using dot notation, and put a number next to it. Conventionally, you use numbers in the hundreds, and each number represents the numerical order that Scrapy will complete each task. So in the below example, my scraper is set to 100 so it will complete before it tries to write to the database (300).
 
 ``` python
