@@ -107,13 +107,13 @@ Step 4: Your initial setup is complete, and it will ask to reboot. Reboot it now
 
 Step 5: Forward your Pi's VPN port on your router by adding port forwarding in your router's configuration settings.
 
-Step 6: Create a client key. You can name it whatever you'd like, but be sure the password is strong. This will create a .opvn file that you will need to transfer to the computer(s) that need VPN access.
+Step 6: Create a client key. (One per device, so if a device ever gets stolen you can revoke access easily and still continue to use your VPN.) You can name the client whatever you'd like, but be sure the password is strong. This will create a .opvn file that you will need to transfer to the computer(s) that need VPN access.
 
-Step 7: Transfer the .opvn file from the <kbd>/home/pi/ovpns</kbd> directory of your Pi to your local computer(s). You can do this with [Filezilla][filezilla] to [transfer via SFTP][sftp]. 
+Step 7: Transfer the .opvn file from the <kbd>/home/pi/ovpns</kbd> directory of your Pi to your local computer(s). You can do this with [Filezilla][filezilla] to [transfer via SFTP][sftp]. If you're transferring to an iOS device (iPhone, iPad), download [OpenVPN Connect][openvpn] from the iTunes Store. Then connect your device to iTunes, go to Apps in your device, scroll to the bottom to select OpenVPN, and drop your .opvn file into the OpenVPN Documents.
 
-Step 8: Download and install [Tunnelblick][tunnelblick] VPN Client for MacOSX.
+Step 8: Download and install [Tunnelblick][tunnelblick] VPN Client for MacOSX. For iOS, open the OpenVPN app, and you should see the name of your VPN host there. Click the add button to add the configuration.
 
-Step 9: Double-click the .opvn file, which will open Tunnelblick to install the VPN configuration. Connect to the VPN tunnel. Running this command on your Pi should show the device connected:
+Step 9: Double-click the .opvn file, which will open Tunnelblick to install the VPN configuration. For all devices: connect to the VPN tunnel using the password you created earlier. Give it a minute or so, then running this command on your Pi should show the device(s) connected:
 
 ```
 $ pivpn clients
@@ -195,6 +195,7 @@ Ad-free surfing, woohoo!
 [vnc]: https://www.raspberrypi.org/documentation/remote-access/vnc/
 [noip]: https://www.noip.com/
 [pivpn-source]: https://github.com/pivpn/pivpn
+[openvpn]: https://itunes.apple.com/us/app/openvpn-connect/id590379981?mt=8
 [filezilla]: https://filezilla-project.org/
 [sftp]: https://www.raspberrypi.org/documentation/remote-access/ssh/sftp.md
 [tunnelblick]: https://tunnelblick.net/
