@@ -45,6 +45,8 @@ As for interviews, I had the pleasure of speaking to some companies out there th
 - Getting residency doesn't seem too difficult.
 - Universal healthcare.
 
+Edit: Something huge I didn't mention when I originally posted this: I would guess that about 1/6th of the attendees were women. While not amazing, it was greater than my expectation of 1/10th being women. Also, at least one of the companies I spoke to had women in their leadership group, and made it a point that one of their goals as a company was to bring in diversity in tech and help more women (especially) develop as leaders in tech. Coming from Silicon Valley and the world of "we don't have the time or budget to figure out the gender gap", it was very heart-warming to hear this commitment without being prompted for it.
+
 All in all, Wellington and New Zealand in general is a lovely place to move to. If you're in tech (and I think even healthcare), there are loads of opportunities open to people who would consider moving out to Wellington, and I would highly encourage a look-see. :) From the sounds of it, they may even put on [another event like this next year][next year]!
 
 I leave with this photo, which only describes the tiniest fraction of beauty and exploration that New Zealand has to offer:
