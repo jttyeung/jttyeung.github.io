@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to Set Up Your Own VPN Server with a Raspberry Pi"
+title:  "How to Set Up Your Own VPN Server (and Ad-Blocker) with a Raspberry Pi"
 date:   2017-06-01 22:38:00
 categories: [networking, security, raspberry pi]
 comments: true
