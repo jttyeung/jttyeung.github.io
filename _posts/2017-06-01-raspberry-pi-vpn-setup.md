@@ -8,7 +8,7 @@ comments: true
 
 
 ### Objective:
-Set up a Raspberry Pi as a VPN to your home network in order to increase security and privacy while browsing on public networks.
+Set up a Raspberry Pi as a VPN to your home network in order to [increase security and privacy while browsing on public networks][wifi safety].
 
 Personal objective: Learn a little bit more about networking, security, and do something with my newly gifted Raspberry Pi!
 
@@ -180,7 +180,7 @@ Ad-free surfing, woohoo!
 
 
 
-
+[wifi safety]: https://www.youtube.com/watch?v=XcghUy-8VRA
 [1password]: https://1password.com/
 [raspbian]: https://www.raspberrypi.org/downloads/raspbian/
 [pi]: https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01CD5VC92&linkCode=as2&tag=jttyeung-20&linkId=76a85cb2b5057513ccf3c6c3dac941f1
