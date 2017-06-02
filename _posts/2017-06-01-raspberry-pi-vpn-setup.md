@@ -6,6 +6,7 @@ categories: [networking, security, raspberry pi]
 comments: true
 ---
 
+
 ### Objective:
 Set up a Raspberry Pi as a VPN to your home network in order to increase security and privacy while browsing on public networks.
 
@@ -87,6 +88,7 @@ Step 9 (optional): To see a GUI desktop for your Pi, [enable VNC server followin
 Done with the Raspberry Pi setup!
 
 
+<br>
 ### PiVPN Setup
 
 Step 1: Install [PiVPN][pivpn] onto the Raspberry Pi. (Always [caution][bash-caution] when using commands to pipe to bash. The below was taken from the PiVPN site, feel free to have a look at the [source code][pivpn-source].)
@@ -120,6 +122,13 @@ $ pivpn clients
 Done with VPN setup!
 
 
+<figure class="figure">
+  <img src="{{url}}/images/pivpn-pihole/pivpn-pihole.jpg" class="figure-img img-fluid center-block" />
+  <figcaption class="figure-caption text-center">Looking good in its eco-friendly casing next to my router.</figcaption>
+</figure>
+
+
+<br>
 ### Okay, wait... for reals though, how do I know my VPN is working besides the fact that it says it's connected?
 
 There may be a better way, but the fastest way I can think of is to connect to another network and try to VPN into your home network. If you have access to tether to your phone you can connect your device to your phone's hotspot, go to [whatsmyip.org][whatsmyip] and check your IP address. Then, VPN into your home network and check your IP again. This should change and match your home network's IP. Voila!
@@ -127,7 +136,7 @@ There may be a better way, but the fastest way I can think of is to connect to a
 Note that using a VPN means that you're connecting to your home network so when you're browsing on other networks no one will be able to tamper with or see what you're doing. Your ISP will still be able to see everything you're doing, and this does not give you anonymity on the internet. If you're looking for more secure browsing in general I highly recommend using the [HTTPS Everywhere][https] browser extension, and if you're looking for browsing anonymously try [Tor][tor].
 
 
-
+<br>
 ### Bonus Section!
 
 Upgrade your Raspberry Pi to also block ads with [Pi-hole][pihole]. This mini-tutorial below demonstrates how to block ads for any device connected to the router.
