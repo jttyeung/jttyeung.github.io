@@ -23,7 +23,7 @@ This is a beginner's tutorial for setting up OpenVPN on a Raspberry Pi, using [P
 Browsing on open WiFi, such as Starbucks, your hotel, or any other place, means that anyone with enough know-how can see the  data you're transmitting or perform a [man-in-the-middle attack][mitm]. Setting up a VPN server means that your data is now encrypted and can only be read through your home ISP provider. It also allows you to access your home network and files while you're away from home, if you wish. You could purchase a monthly subscription service from a VPN provider, but you risk not knowing if you can really trust that provider, that they set up their VPN correctly/securely, and that they are not collecting information on you. Additionally, a Raspberry Pi set will only cost about $50 total - a one time cost rather than a monthly subscription - and will provide you with a great deal more protection and privacy.
 
 
-<br>
+<br><a name="amazonassociates"></a>
 #### What you need:
 - [Raspberry Pi][pi]
 - [8GB or larger SD card][sdcard]
@@ -178,6 +178,10 @@ Ad-free surfing, woohoo!
 <img src="{{url}}/images/pivpn-pihole/pihole-stats.png" class="img-responsive center-block" />
 
 
+<br>
+> Hey! Did you like my tutorial? If so, consider supporting me by [donating to my next Raspberry Pi project][donate], purchasing materials for this project through one of my [Amazon Associate links above][amazonassociates], or even [buying me a Raspberry Pi][wish list] if you're feeling very generous. In any case, thanks for reading and let me know if I can help you set up secure and private browsing!
+
+
 
 
 [wifi safety]: https://www.youtube.com/watch?v=XcghUy-8VRA
@@ -206,3 +210,6 @@ Ad-free surfing, woohoo!
 [pihole]: https://pi-hole.net/
 [pihole router settings]: https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245
 [vim]: http://www.openvim.com/
+[donate]: https://www.paypal.me/jttyeung/5
+[amazonassociates]: #amazonassociates
+[wish list]: https://www.amazon.com/hz/wishlist/ls/1VDJ90JUGVEGY
