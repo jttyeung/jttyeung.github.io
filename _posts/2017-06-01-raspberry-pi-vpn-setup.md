@@ -157,21 +157,20 @@ Note: tun0 refers to the VPN and eth0 refers to your LAN devices. If you have LA
 Step 4: On your Pi, run the following commands to edit the pihole config file in VIM. ([Crash course on VIM here.][vim])
 
 ```
-$ cd /etc/dnsmasq.d/
-$ sudo vi 01-pihole.conf
+$ sudo vi /etc/dnsmasq.conf
 ```
 
-Look for a line that begins with `#interface=` and add eth0 and tun0 as interfaces like so:
+Look for a line that begins with `#interface=` and add eth0 (ethernet connected devices), tun0 (VPN tunnel), and wlan0 (wireless devices) as interfaces (as needed) like so:
 
 <img src="{{url}}/images/pivpn-pihole/pihole-interface.png" class="img-responsive center-block" />
 
-Step 5: Restart dnsmasq:
+Step 5: Restart the Raspberry Pi:
 
 ```
-$ sudo systemctl restart dnsmasq
+$ sudo shutdown -r now
 ```
 
-All done - now sit back, relax, and watch those ads get blocked as you sip that fine whisk(e)y in your hand.
+Now wait a few minutes for it to reboot, and you're all done! Now sit back, relax, and watch those ads get blocked as you sip that fine whisk(e)y in your hand.
 
 Ad-free surfing, woohoo!
 
