@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Badass JavaScript: Array.prototype.slice.call()"
-date:   2016-10-24 14:32:00 -0700
+date:   2016-10-31 14:32:00 -0700
 categories: [javascript, badass javascript]
 comments: true
 ---
@@ -41,7 +41,7 @@ function makeFood() {
     // return ingredients = ["nori", "hamachi", "uni", "short-grain rice", "wasabi"]
     // return cuisine = ["Japanese"]
 
-   
+
    // food making algorithm here
 
 }
