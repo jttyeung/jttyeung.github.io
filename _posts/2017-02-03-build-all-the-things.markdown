@@ -2,7 +2,7 @@
 layout: post
 title:  "Build All The Things"
 date:   2017-02-03 01:39:00
-tags: [hackbright, "developer life"]
+tags: [hackbright, developer life]
 comments: true
 ---
 

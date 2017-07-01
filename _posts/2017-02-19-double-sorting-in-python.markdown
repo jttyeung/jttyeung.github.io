@@ -2,7 +2,7 @@
 layout: post
 title:  "Double Sorting in Python"
 date:   2017-02-19 20:29:00
-tags: [python, "badass python"]
+tags: [python]
 comments: true
 ---
 
