@@ -11,7 +11,7 @@ comments: true
 It's a cloud platform that allows people to deploy their apps, among many other things. It's like Amazon Web Services (AWS) with training wheels. In fact, Heroku is built on top of AWS. Heroku has a free tier offering, hence it makes a great and widely popular platform for students, hobbyists, and bootcamp grads to deploy their app.
 
 <br>
-#### Why I Am Writing This Tutorial and Who This is For
+### Why I Am Writing This Tutorial and Who This is For
 There are a ton of tutorials online on how to deploy your web app to Heroku, and many of them are absolutely perfect. Heroku's is also not so bad, but I'm going to go a little further into breaking down the details for n00bs like me. I am a little embarassed to admit I spent about 5 hours or so banging my head against my keyboard in attempt to figure this one out. In particular I really had trouble with the database migration part so I'll be focusing on how to migrate a **PostgreSQL** database out of **Vagrant** (a virtual machine) into your Heroku database. This will be more or less geared to Hackbright folks, for who this problem applies to directly.
 
 <br>
@@ -22,7 +22,7 @@ There are a ton of tutorials online on how to deploy your web app to Heroku, and
 3. Login to Heroku `$ heroku login`
 4. Create an app on Heroku and add a git remote for it.
 
-```python
+``` python
 heroku apps:create your-appname-here
 heroku git:remote -a your-appname-here
 ```
@@ -41,7 +41,7 @@ Insert your Python server/routing file as "web". `web: python server.py` This wi
 
 7. Modify the PORT number specified in your server file because Heroku will randomly assign ports. Also make sure the app doesn't enter debug mode on Heroku. Git commit these changes.
 
-```python
+``` python
 # server.py
 
 PORT = int(os.environ.get("PORT", 5000))
@@ -96,7 +96,7 @@ DATABASE_URL='postgres://somelongurlstringto.amazonaws.com'
 
 4. In the server.py file, modify the database connection settings for Heroku.
 
-```python
+``` python
 # server.py
 
 connect_to_db(app, os.environ.get("DATABASE_URL"))
@@ -104,7 +104,7 @@ connect_to_db(app, os.environ.get("DATABASE_URL"))
 
 5. In the model.py (database model) file, modify the database connection settings for Heroku.
 
-```python
+``` python
 # model.py
 
 def connect_to_db(app, db_uri=None):
