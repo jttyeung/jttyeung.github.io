@@ -144,7 +144,7 @@ $ PGPASSWORD=your-database-password pg_dump -Fc --no-acl -h localhost -U your-co
 
 8. On the local drive, find database.dump. It now needs to be hosted somewhere on the web so Heroku can find it. Heroku suggests Amazon Web Services (S3), but I thought it would be easier using Dropbox since I already have that setup. To use Dropbox, add the file to a public folder, right click the file and select "Copy Dropbox Link".
 
-9. Migrate data using a database restore. While on the local drive connected to Heroku via the Terminal, run:
+9. Migrate data using a database restore. The first link is where the database should be restored from, and DATABASE_URL is the destination. DATABASE_URL uses the Heroku database alias that was created earlier so it's not necessary to write out the entire Heroku generated address here. While on the local drive connected to Heroku via the Terminal, run:
 
 ```
 $ heroku pg:backups:restore 'https://your-dropbox-or-s3-hosted.dump' DATABASE_URL
