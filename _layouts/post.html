@@ -18,7 +18,7 @@ layout: default
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
         <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
         {% if page.comments %} • <a href="{{ site.url }}{{ post.url }}#disqus_thread">0 Comments</a>{% endif %}</p>
-        <p class="post-meta">Tags: {% for category in page.categories %} <a href="#">{{ category }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}</p>
+<!--         <p class="post-meta">Tags: {% for category in page.categories %} <a href="#">{{ category }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}</p> -->
       </header>
   </div><!-- row -->
 
@@ -26,6 +26,18 @@ layout: default
       <div class="col-md-1"></div>
       <div class="post-content col-md-10" itemprop="articleBody">
         {{ content }}
+      </div><!-- col-md-10 -->
+  </div><!-- row -->
+
+  <div class="row v-padding">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 v-padding">
+        Related Posts:
+        <br>
+        {% assign sorted_tags = page.tags | sort %}
+        {% for tag in sorted_tags %}
+          <a href="/blog/#{{ tag }}">{{ tag }}</a>{% unless forloop.last %} • {% endunless %}
+        {% endfor %}
       </div><!-- col-md-10 -->
   </div><!-- row -->
 
