@@ -2,7 +2,7 @@
 layout: post
 title:  "My Obsession With Tying Shoelaces"
 date:   2017-04-17 01:39:00
-categories: [odd, other]
+tags: [odd, other]
 comments: true
 ---
 
