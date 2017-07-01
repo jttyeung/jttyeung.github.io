@@ -10,27 +10,46 @@ permalink: /blog/
     <div class="col-md-1"></div>
 
     <div class="col-md-7">
-      <!-- Shows all posts; one post for each tag -->
       <h1 class="page-heading">Posts</h1>
+
+      <!-- Show all posts -->
+      <div class="post-list-container" id="all-container">
+        <div class="table-responsive">
+          <table class="table table-condensed table-borderless">
+            <tbody>
+              {% for post in site.posts %}
+              <tr>
+                <td class="fit"><span class="post-date">{{ post.date | date: "%d %b %Y" }}</span></td>
+                <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Filter for post by tag -->
       {% for tag in site.tags %}
         {% assign t = tag | first %}
         {% assign posts = tag | last %}
         <div class="post-list-container hidden" id="{{ t }}-container">
-          <ul class="post-list">
-            {% for post in posts %}
-              {% if post.tags contains t %}
-              <li>
-                <h4>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                </h4>
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
+          <table class="table table-condensed table-borderless">
+            <tbody>
+              {% for post in posts %}
+                {% if post.tags contains t %}
+                <tr>
+                    <td class="fit"><span class="post-date">{{ post.date | date: "%d %b %Y" }}</span></td>
+                    <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+          </tbody>
+          </table>
         </div><!-- post-list-container -->
       {% endfor %}
     </div><!-- col-md-7 -->
 
+      <!-- Shows all tags -->
     <div class="col-md-3">
       <h2 class="categories-heading">Tags</h3>
       {% assign sorted_tags = site.tags | sort %}
