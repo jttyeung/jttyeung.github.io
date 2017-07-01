@@ -2,7 +2,7 @@
 layout: post
 title:  "Hackbright Week 1 Reflections"
 date:   2017-01-09 21:22:00
-categories: [hackbright]
+tags: [hackbright]
 comments: true
 ---
 

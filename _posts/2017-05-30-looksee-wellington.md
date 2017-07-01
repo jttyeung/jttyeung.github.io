@@ -2,7 +2,7 @@
 layout: post
 title:  "A Week in Wellie with LookSee Wellington"
 date:   2017-05-30 18:24:00
-categories: [software engineering]
+tags: [software engineering]
 comments: true
 ---
 

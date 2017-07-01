@@ -2,7 +2,7 @@
 layout: post
 title:  "6-Step Guide to Set Up Jekyll with Bootstrap"
 date:   2016-10-24 10:32:00 -0700
-categories: [jekyll, bootstrap]
+tags: [jekyll, bootstrap]
 comments: true
 ---
 

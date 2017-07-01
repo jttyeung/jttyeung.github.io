@@ -2,7 +2,7 @@
 layout: post
 title:  "Why Jekyll and Bootstrap?"
 date:   2016-11-06 19:43:00 -0700
-categories: [jekyll, bootstrap]
+tags: [jekyll, bootstrap]
 comments: true
 ---
 

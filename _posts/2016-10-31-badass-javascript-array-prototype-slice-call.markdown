@@ -2,7 +2,7 @@
 layout: post
 title:  "Badass JavaScript: Array.prototype.slice.call()"
 date:   2016-10-31 14:32:00 -0700
-categories: [javascript, badass javascript]
+tags: [javascript, badass javascript]
 comments: true
 ---
 

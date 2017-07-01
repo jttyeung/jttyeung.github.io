@@ -2,7 +2,7 @@
 layout: post
 title:  "Markov Chains"
 date:   2017-01-16 13:55:00
-categories: [hackbright]
+tags: [hackbright]
 comments: true
 ---
 

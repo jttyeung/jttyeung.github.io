@@ -2,7 +2,7 @@
 layout: post
 title:  "Why I'm Aspiring to Be a Software Developer"
 date:   2016-10-16 19:47:00 -0700
-categories: [software engineering]
+tags: [software engineering]
 comments: true
 ---
 

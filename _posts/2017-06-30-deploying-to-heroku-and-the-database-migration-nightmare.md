@@ -2,7 +2,7 @@
 layout: post
 title:  "Deploying to Heroku and the Database Migration Nightmare"
 date:   2017-06-30 21:38:00
-categories: [software engineering, heroku, postgresql, vagrant]
+tags: [software engineering, heroku, postgresql, vagrant]
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Build A Web Crawler and Scraper for Craigslist Using Scrapy"
 date:   2017-04-29 12:19:00
-categories: [web scraping]
+tags: [web scraping]
 comments: true
 ---
 

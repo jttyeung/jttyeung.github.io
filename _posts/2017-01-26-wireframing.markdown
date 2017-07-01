@@ -2,7 +2,7 @@
 layout: post
 title:  "Wireframing"
 date:   2017-01-26 13:50:00
-categories: [wireframing]
+tags: [wireframing]
 comments: true
 ---
 

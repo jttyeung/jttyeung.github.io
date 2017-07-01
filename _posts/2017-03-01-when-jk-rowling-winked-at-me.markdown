@@ -2,7 +2,7 @@
 layout: post
 title:  "When J.K. Rowling Winked At Me"
 date:   2017-03-01 22:39:00
-categories: [hackbright, "developer life"]
+tags: [hackbright, "developer life"]
 comments: true
 ---
 

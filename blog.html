@@ -12,23 +12,29 @@ permalink: /blog/
     <h1 class="page-heading">Posts</h1>
 
     <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <h4>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-          </h4>
-        </li>
+      {% for tag in site.categories %}
+        {% assign t = tag | first %}
+        {% assign posts = tag | last %}
+          {% for post in posts %}
+            {% if post.tags contains t %}
+            <li>
+              <h4>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+              </h4>
+            </li>
+            {% endif %}
+          {% endfor %}
       {% endfor %}
     </ul>
 
     </div><!-- col-md-7 -->
 
-<!--
+
     <div class="col-md-3">
-      <h3 class="categories-heading">Categories</h3>
+      <h2 class="categories-heading">Categories</h3>
       {% for category in site.categories %} <a href="/{{ category | first }}/">{{ category | first }}</a> {% unless forloop.last %}•{% endunless %} {% endfor %}
     </div>
--->
+
 
   </div><!-- row -->
   <div class="row v-padding">

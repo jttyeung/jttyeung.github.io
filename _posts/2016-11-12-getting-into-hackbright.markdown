@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting into Hackbright"
 date:   2016-11-12 15:22:00
-categories: [hackbright]
+tags: [hackbright]
 comments: true
 ---
 

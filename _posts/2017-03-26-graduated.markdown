@@ -2,7 +2,7 @@
 layout: post
 title:  "Graduated!"
 date:   2017-03-18 01:49:00
-categories: [hackbright]
+tags: [hackbright]
 comments: true
 ---
 
