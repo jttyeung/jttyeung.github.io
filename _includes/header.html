@@ -12,10 +12,14 @@
     <div class="container">
       <div class="row">
         {% assign pages = site.pages | sort: "weight" %}
-        {% for page in pages %}
-          {% if page.title %}
-            <a id="menu" {% if page.url == page.url %} class="active" {% endif %} href="{{ page.url }}">
-              <div class="col-xs-3 col-md-3 nav-item">{{ page.title }}</div>
+        {% for p in pages %}
+          {% if p.title %}
+            <a id="menu" href="{{ p.url }}">
+              {% if p.url == page.url %}
+                <div class="col-xs-3 col-md-3 nav-item active-nav-item">{{ p.title }}</div>
+              {% else %}
+                <div class="col-xs-3 col-md-3 nav-item">{{ p.title }}</div>
+              {% endif %}
             </a>
           {% endif %}
         {% endfor %}

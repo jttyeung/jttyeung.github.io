@@ -81,6 +81,7 @@ h3 span {
 .below-nav {
   background-color: rgba(78, 90, 82, 0.9);
   height: 2px;
+  margin-top: -3px;
 }
 
 .navbar {
@@ -96,12 +97,17 @@ h3 span {
   font-weight: 900;
 }
 
+.active-nav-item {
+  border-bottom: 5px solid rgb(78, 90, 82);
+}
+
 .navbar a {
   color: rgb(78, 90, 82);
 }
 
 a:hover .nav-item {
-  border-bottom: 5px solid rgb(78, 90, 82);
+  color: rgb(196, 163, 156);
+  border-bottom: 5px solid rgb(196, 163, 156);
 }
 
 
