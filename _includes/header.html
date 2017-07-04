@@ -6,28 +6,23 @@
     {% assign custom_url = site.url | append: site.baseurl %}
     {% assign full_base_url = site.github.url | default: custom_url %}
 <!--     <a class="site-title" href="{{ full_base_url }}/">{{ site.title | escape }}</a> -->
-  <div class="row">
-    <button class="hamburger hamburger--vortex-r hamburger-position" type="button" aria-label="Menu" aria-controls="navigation">
-    <!--   <span class="hamburger-label nav-label-lg">Menu</span> -->
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
-  </div><!-- row -->
-  <div class="row">
-    <nav class="nav-list hide col-md-12">
-    {% assign pages = site.pages | sort: "weight" %}
-      <ul>
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-            <a id="menu" {% if my_page.url == my_page.url %} class="active" {% endif %} href="{{ my_page.url | prepend: full_base_url }}">
-              <li>{{ my_page.title | escape }}</li>
+
+  <nav class="navbar navbar-fixed-top">
+    <div class="above-nav"></div>
+    <div class="container">
+      <div class="row">
+        {% assign pages = site.pages | sort: "weight" %}
+        {% for page in pages %}
+          {% if page.title %}
+            <a id="menu" {% if page.url == page.url %} class="active" {% endif %} href="{{ page.url }}">
+              <div class="col-xs-3 col-md-3 nav-item">{{ page.title }}</div>
             </a>
           {% endif %}
         {% endfor %}
-      </ul>
-    </nav>
-  </div><!-- row -->
+      </div>
+    </div>
+    <div class="below-nav"></div>
+  </nav>
 
   </div><!-- nav-menu -->
   </div><!-- container-fluid -->

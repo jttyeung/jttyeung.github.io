@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
   {% include head.html %}
 
@@ -14,31 +14,6 @@
         {% include footer.html %}
 
   <script>
-
-    // Navigation bar
-
-    $('nav').hide();
-    $('button').addClass('hamburger-opaque');
-
-    var $hamburger = $('.hamburger');
-
-    $hamburger.on('click', function(e) {
-      $hamburger.toggleClass('is-active');
-      $('nav').removeClass('hide');
-      $('nav').slideToggle(150);
-      $('button').toggleClass('hamburger-opaque');
-      $('button').toggleClass('hamburger-transparent');
-    });
-
-    $(document).on('click', function(event) {
-      if (!$(event.target).closest('.nav-menu').length) {
-        $hamburger.removeClass('is-active');
-        $('nav').slideUp(150);
-        $('button').removeClass('hamburger-transparent');
-        $('button').addClass('hamburger-opaque');
-      }
-    });
-
 
     // Blog Tag Filters. Credit: http://drejkim.com/blog/2015/03/18/filtering-posts-by-tags-with-jekyll/
 
