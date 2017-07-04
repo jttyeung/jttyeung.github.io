@@ -138,7 +138,7 @@ DATABASE_URL='postgres://somelongurlstringto.amazonaws.com'
 
     **Method 2** (Inside Vagrant) and in your project folder, run the same command as above, but substitute your-computer-username with whatever superuser username was created in the last step. Add PGPASSWORD= to the beginning with the password set for the superuser.
     ```
-    $ PGPASSWORD=your-superuser-password pg_dump -Fc --no-acl -h localhost -U your-computer-username your-superuser-name > database.dump
+    $ PGPASSWORD=your-superuser-password pg_dump -Fc --no-acl -h localhost -U  your-superuser-name > database.dump
     ```
 
     -Fc: custom format dump<br>
@@ -159,7 +159,7 @@ $ heroku pg:backups:restore 'https://your-dropbox-or-s3-hosted.dump' DATABASE_UR
 
 <br>
 
-And there it is... the app and database is live! Being inside Vagrant somehow disallowed pg_dumps unless a database user and password is setup. That made the difference between recreating a database entirely on a local drive, and not. I can't exactly state the reason behind this, but hopefully this will save hours of confusion for someone else trying to deploy their Heroku app in the future.
+And there it is... the app and database are live! Being inside Vagrant somehow disallowed pg_dumps unless a database user and password is setup. That made the difference between recreating a database entirely on a local drive, and not. I can't exactly state the reason behind this, but hopefully this will save hours of confusion for someone else trying to deploy their Heroku app in the future.
 
 
 [homebrew]: https://brew.sh/
