@@ -2,7 +2,7 @@
 layout: post
 title:  "Smile More, Donate More :)"
 date:   2017-07-02 18:54:00
-tags: [software engineering, chrome extensions]
+tags: [software engineering, browser extensions]
 comments: true
 ---
 
