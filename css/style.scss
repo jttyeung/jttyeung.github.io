@@ -7,11 +7,6 @@ $headings-font-family: "Lato", sans-serif;
 $link-color: #C4A39C;
 $text-color: #4E5A52;
 
-$hamburger-layer-height: 4px;
-$hamburger-layer-color: rgb(213, 226, 218);
-$hamburger-layer-spacing: 5px;
-$hamburger-hover-transition-duration: 0.3s;
-
 /* any style customization must be before the bootstrap import */
 @import "hamburgers";
 @import "bootstrap";
