@@ -12,7 +12,7 @@ It's a cloud platform that allows people to deploy their apps, among many other 
 
 <br>
 ### Why I Am Writing This Tutorial and Who This is For
-There are a ton of tutorials online on how to deploy web apps to Heroku, and many of them are absolutely perfect. Heroku's is also not so bad, but I'm going to go a little further into breaking down the details for n00bs like me. I am a little embarassed to admit I spent about 5 hours or so banging my head against my keyboard in attempt to figure this one out. In particular I really had trouble with the database migration part so I'll be drilling down how to migrate a **PostgreSQL** database out of **Vagrant** (a virtual machine) into a Heroku database. This will be more or less geared to Hackbright folks, for who this problem applies to directly.
+There are a ton of tutorials online on how to deploy web apps to Heroku, and many of them are absolutely perfect. Heroku's is also not so bad, but I'm going to go a little further into breaking down the details for n00bs like me. I am a little embarassed to admit I spent about 5 hours or so banging my head against my keyboard in attempt to figure this one out. In particular I really had trouble with the database migration part so I'll be drilling down how to migrate a **PostgreSQL** database out of **Vagrant** (a virtual machine) into a Heroku database. This will be more or less geared to Hackbright folks, for who this problem applies to directly. If you want to learn how to deploy to AWS, [check out my friend Kate's detailed blog post about deploying to AWS][kate-aws]!
 
 <br>
 ### How To Deploy
@@ -164,3 +164,4 @@ And there it is... the app and database are live! Being inside Vagrant somehow d
 
 [homebrew]: https://brew.sh/
 [heroku]: https://www.heroku.com/
+[kate-aws]: https://kathryn-rowe-portfolio.herokuapp.com/aws_demo
