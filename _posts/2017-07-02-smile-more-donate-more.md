@@ -57,7 +57,7 @@ The other special thing about this project is that it'll be the first public rel
 Here's a live action screencast of what the extension looks like on Chrome. Notice no matter what page I try to visit on Amazon, I will only be taken to the AmazonSmile version of that page:
 <br>
 
-[<img src="https://github.com/jttyeung/smile-more-donate-more/raw/master/smilemore-screencast.gif" class="img-responsive center-block" />][smilemore]
+[<img src="https://github.com/jttyeung/smile-more-donate-more/blob/master/screenshots/smilemore-screencast.gif?raw=true" class="img-responsive center-block" />][smilemore]
 
 <br>
 
@@ -66,7 +66,7 @@ Overall, this was a really fun project for me. It was a joy to put together my f
 Keep Smiling :)
 
 <br>
-[<img src="https://github.com/jttyeung/smile-more-donate-more/blob/master/screenshots/smilemore-screencast.gif?raw=true" class="img-responsive" />][smilemore]
+[<img src="https://raw.githubusercontent.com/jttyeung/smile-more-donate-more/master/chrome-opera-extension/icons/smilemore128.png" class="img-responsive" />][smilemore]
 
 
 [smilemore]: https://chrome.google.com/webstore/detail/smile-more-donate-more/lbicnnogjkpfkhokabdopjibhlcejhop?hl=en-US&gl=US
