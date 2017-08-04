@@ -7,7 +7,7 @@ comments: true
 ---
 
 
-[<img src="https://github.com/jttyeung/smile-more-donate-more/raw/master/smilemore-1400x560.png" class="img-responsive center-block" />][smilemore]
+[<img src="https://raw.githubusercontent.com/jttyeung/smile-more-donate-more/master/screenshots/smilemore-1400x560.png" class="img-responsive center-block" />][smilemore]
 <br>
 
 ### What is [Smile More, Donate More :)][smilemore]
@@ -66,7 +66,7 @@ Overall, this was a really fun project for me. It was a joy to put together my f
 Keep Smiling :)
 
 <br>
-[<img src="https://github.com/jttyeung/smile-more-donate-more/raw/master/chrome-extension/icons/smilemore128.png" class="img-responsive" />][smilemore]
+[<img src="https://github.com/jttyeung/smile-more-donate-more/blob/master/screenshots/smilemore-screencast.gif?raw=true" class="img-responsive" />][smilemore]
 
 
 [smilemore]: https://chrome.google.com/webstore/detail/smile-more-donate-more/lbicnnogjkpfkhokabdopjibhlcejhop?hl=en-US&gl=US
