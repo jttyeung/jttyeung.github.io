@@ -12,6 +12,9 @@
       <div class="row">
         {% assign pages = site.pages | sort: "weight" %}
         {% for p in pages %}
+          {% if p.title == 'Podcasts' %}
+            {% continue %}
+          {% endif %}
           {% if p.title %}
             <a id="menu" href="{{ p.url }}">
               {% if p.url == page.url %}
